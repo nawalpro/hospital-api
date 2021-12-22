@@ -1,4 +1,4 @@
-const { jwt_secret } = require("../config/Env");
+const { jwt_secret } = require("../config/env");
 const UnauthorizedError = require("../helpers/errors/401_unauthorized");
 const Patient = require("../modules/Patient/PatientModel");
 

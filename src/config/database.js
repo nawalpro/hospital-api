@@ -1,6 +1,6 @@
 const Sequelize = require("sequelize");
 
-const Env = require('./Env');
+const Env = require('./env');
 
 
 const associateAll = async (models) => {

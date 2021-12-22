@@ -1,4 +1,4 @@
-const { SERVER_ERROR } = require("../helpers/statusCode");
+const { SERVER_ERROR } = require("../helpers/StatusCode");
 
 module.exports = (error, request, response, next) => {
   const { errors } = error;
