@@ -12,6 +12,7 @@
 
 ## 📖 Description
 
+Hospital api is a full stack project that includes a c.r.u.d 
 
 #### 🔬 Technologies
 
