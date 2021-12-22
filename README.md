@@ -45,7 +45,9 @@ Wind my roof is a **full stack** project made with React it consist of signup an
 ## Contributors
 
 -<spam>Nawel Maizate</spam> [<img alt="githb link" width="30px" src="./img/Octocat.jpg"/>][nawal] 
+
 -<spam>Jérôme Eliezer</spam> [<img alt="githb link" width="30px" src="./img/Octocat.jpg"/>][jérôme] 
+
 -<spam>Kanu Rebecca</spam> [<img alt="githb link" width="30px" src="./img/Octocat.jpg"/>][rebecca]
 
 <br />
