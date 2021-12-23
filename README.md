@@ -28,10 +28,13 @@
 
 #### ⚙️ for use App
 
-1.  Initialisation of a package.json
+1.  Create  and set .env from  folder's clientHospital/ and api/
+
+2.  Initialisation of a package.json
 
         cd clientHospital or cd apiHospital
         npm install
+        npm start
 
 
 
