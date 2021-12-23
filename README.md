@@ -1,4 +1,4 @@
-# 🚀 Hospital api
+# 🚀 Hospital ( Back et Front ) 
 
 ---
 
@@ -26,22 +26,14 @@
 
 ## How To Use
 
-#### ⚙️ Installation
+#### ⚙️ for use App
 
 1.  Initialisation of a package.json
 
-        npm init
+        cd clientHospital or cd apiHospital
+        npm install
 
-2.  Installation of modules
 
-        npm install bcrypt
-        npm install cookie-parser
-        npm install dotenv
-        npm install express
-        npm install jsonwebtoken
-        npm install mysql2
-        npm install sequelize
-        npm install uuid
 
 ## Contributors
 
