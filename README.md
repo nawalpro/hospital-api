@@ -28,7 +28,7 @@
 
 #### ⚙️ for use App
 
-1.  Create  and set .env from  folder's clientHospital/ and api/
+1.  Create  and set .env from  folder's clientHospital/ and apiclient/
 
 2.  Initialisation of a package.json
 
