@@ -12,7 +12,7 @@
 
 ## 📖 Description
 
-**Hospital** api is a full stack project that includes a **C.R.U.D** 
+**Hospital**  is a full stack project that includes a **C.R.U.D** 
 
 #### 🔬 Technologies
 
