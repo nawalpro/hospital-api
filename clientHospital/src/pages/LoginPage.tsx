@@ -5,6 +5,7 @@ import Register from "../components/logs/register";
 function LoginPage() {
 	return (
 		<>
+
 			{/* <Login />
       <Register/> */}
 
