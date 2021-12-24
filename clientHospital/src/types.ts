@@ -8,3 +8,8 @@ export type ToggleFormType = {
     formTitle: string;
 };
 
+export type user = {
+    email: string,
+    password: string,
+    access_token: string
+}
