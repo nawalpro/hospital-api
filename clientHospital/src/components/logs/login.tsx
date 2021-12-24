@@ -14,6 +14,7 @@ const login:React.FC<Props> = () => {
   
     return (
         <div>
+            <h1>Les Minions</h1>
             {/* <form setCredentials={setCredentials} credentials={registerCredentials} >
                 <label htmlFor='email'>Email</label>
                 <input placeholder='Email' />
