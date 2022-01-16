@@ -13,7 +13,7 @@ export type usersignup = {
 
 
 
-function LoginPage = React.FC <usersignup> () =>{
+const LoginPage = () =>{
  const [email, setEmail] = useState('')
  const [password, setPassword] = useState('')
  const [error, setError] = useState('')
@@ -24,7 +24,6 @@ function LoginPage = React.FC <usersignup> () =>{
 			<h1>LOGIN PAGE</h1>
 			<section className='login'>
 				<h2>Se connecter</h2>
-				{error && <p className='error'>{error}</p>}
 				<form>
 					<div className='form-group'>
 						<label htmlFor='email'>
@@ -34,7 +33,6 @@ function LoginPage = React.FC <usersignup> () =>{
 							type='email'
 							className='form-control'
 							required
-							onChange={(e) => setEmail(e.target.value)}
 						/>
 					</div>
 					<div className='form-group'>
@@ -45,12 +43,11 @@ function LoginPage = React.FC <usersignup> () =>{
 							type='password'
 							className='form-control'
 							required
-							onChange={(e) => setPassword(e.target.value)}
 						/>
 					</div>
 
 					<div className='form-group'>
-						<button onSubmit={} className='mainbutton'>
+						<button type='submit' className='mainbutton'>
 							Valider
 						</button>
 					</div>
