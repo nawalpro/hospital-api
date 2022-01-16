@@ -13,7 +13,7 @@ export type usersignup = {
 
 
 
-function LoginPage() {
+function LoginPage = React.FC <usersignup> () =>{
  const [email, setEmail] = useState('')
  const [password, setPassword] = useState('')
  const [error, setError] = useState('')
@@ -50,7 +50,7 @@ function LoginPage() {
 					</div>
 
 					<div className='form-group'>
-						<button onClick={onClickLoginIn} className='mainbutton'>
+						<button onSubmit={} className='mainbutton'>
 							Valider
 						</button>
 					</div>
