@@ -4,14 +4,16 @@ import { DashboardPage } from "../pages/DashboardPage";
 
 import Home from "../pages/HomePage";
 import LoginPage from "../pages/LoginPage";
+import SignUpPages from "../pages/SignUpPages";
 
 function index() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/signup" element={< SignUpPages />} />
+        <Route path="/todo" element={<Home />} />
         <Route path="/dashboard" element={<DashboardPage />} />
-        <Route path="/login" element={<LoginPage />} />
       </Routes>
     </Router>
   );
