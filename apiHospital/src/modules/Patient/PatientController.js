@@ -50,7 +50,7 @@ const PatientController = {
 
       login: async (req, res, next) => {
         try {
-          console.log(req.body);
+          console.log(req.body, "login");
           const { email, password } = req.body;
           const patient = await Patient.findOne({
             where: { email }

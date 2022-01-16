@@ -10,6 +10,7 @@ const env = {
     host: process.env.DB_HOST,
     jwt_secret: process.env.JWT_SECRET,
     salt_rounds: process.env.SALT_ROUNDS,
+    front_end_url: process.env.FRONT_END_URL,
     dialect: "mysql",
     seederStorage: "sequelize",
 }
