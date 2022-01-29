@@ -11,8 +11,10 @@ class Patient extends Model {
                     allowNull: false,
                     defaultValue: DataTypes.UUIDV4
                 },
-                first_name: DataTypes.STRING,
-                last_name: DataTypes.STRING,
+                firstname: DataTypes.STRING,
+                lastname: DataTypes.STRING,
+                phone: DataTypes.STRING,
+                
                 email: {
                     type: DataTypes.STRING,
                 },
