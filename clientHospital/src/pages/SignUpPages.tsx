@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import axios from 'axios';
 import {
@@ -45,6 +45,9 @@ const SignUpPages: React.FC<Usersignup> = () => {
 		password: '',
 	});
 
+	const [error, setError] = useState('');
+	const [success, setSuccess] = useState('');
+	const navigate = useNavigate(); 
 
 	const handleChange = (e: React.FormEvent<EventTarget>) => {
 		let target = e.target as HTMLInputElement;
@@ -54,29 +57,25 @@ const SignUpPages: React.FC<Usersignup> = () => {
 	const handleSubmit = (e: React.FormEvent) => {
 		e.preventDefault();
 		//add
-		try {
-			console.log(value, "value");
-			const { firstname, lastname, email, phone, password } = value;
-			axios.post(
-				`http://localhost:4001/patient/`,
-				
-				{firstname, lastname, email, phone, password}
-				
-			)
-			
-				.then(
-					(res) => {
-						console.log(res.data, "res.data");
-						console.log(res.status, "res.status");
-						console.log(res.statusText, "res.statusText");
-						console.log(res.headers, "res.headers");
-						console.log(res.config, "res.config");
-					}
-				)
-		} catch (error) {
-			console.log(error);
+		console.log(value, "value");
+		const { firstname, lastname, email, phone, password } = value;
+		axios.post(
+			`http://localhost:4001/patient/`,
+			{ firstname, lastname, email, phone, password }
+		)
+			.then((res) => {
+				if (res.status === 201) {
+					setSuccess("Successfully logged in");
+					navigate("/profil");
+				}
+			})
+			.catch((err) => {
+				if(err.response) {
+					setError(err.response.data.message);
+				}
+				setError("Quelque chose a mal tourné, essayez à nouveau");
+			});
 
-		}
 
 	};
 
@@ -96,7 +95,7 @@ const SignUpPages: React.FC<Usersignup> = () => {
 							onChange={handleChange}
 						/>
 						<div className='form-group'>
-		
+
 							<TextField
 								label='Nom'
 								type='name'
@@ -109,7 +108,7 @@ const SignUpPages: React.FC<Usersignup> = () => {
 						</div>
 						<div className='form-group'>
 
-							
+
 						</div>
 						<div className='form-group'>
 
@@ -138,7 +137,7 @@ const SignUpPages: React.FC<Usersignup> = () => {
 							/>
 						</div>
 						<div className='form-group'>
-							
+
 							<TextField
 								label='Mot de passe'
 								name='password'
@@ -151,7 +150,7 @@ const SignUpPages: React.FC<Usersignup> = () => {
 							/>
 						</div>
 						{error}
-		{/* <div className="form-group">
+						{/* <div className="form-group">
         			  <label>Confirm Password</label>
         			  <input
         			    type="password"
@@ -192,7 +191,7 @@ const SignUpPages: React.FC<Usersignup> = () => {
 								remplir le formulaire.
 							</p>
 						</div>
-				
+
 					</form>
 				</section>
 			</Container>
