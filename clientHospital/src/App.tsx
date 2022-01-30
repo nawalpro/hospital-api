@@ -1,11 +1,8 @@
 import RoutePath from './routes/index';
 import React from 'react'
-
 function App() {
-  return (
-    
-      <RoutePath/>
-   
+  return ( 
+    <RoutePath/>
   )
 }
 
