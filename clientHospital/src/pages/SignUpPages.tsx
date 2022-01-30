@@ -8,6 +8,7 @@ import {
 	TextField,
 	Button,
 } from "@material-ui/core";
+import { error } from "console";
 
 const useStyles = makeStyles((theme) => ({
 	heading: {
@@ -24,9 +25,8 @@ interface Usersignup {
 	password?: string;
 	phone?: string;
 	// adress?: string;
-	lastName?: string;
-	firstName?: string;
-	error?: string;
+	lastname?: string;
+	firstname?: string;
 	// confirmPassword: string;
 	// acceptTerms: boolean;
 };
@@ -37,13 +37,12 @@ const SignUpPages: React.FC<Usersignup> = () => {
 
 
 	const [value, setValue] = useState({
-		firstName: '',
-		lastName: '',
+		firstname: '',
+		lastname: '',
 		email: '',
 		phone: '',
 		// adress: '',
 		password: '',
-		error: '',
 	});
 
 
@@ -56,16 +55,27 @@ const SignUpPages: React.FC<Usersignup> = () => {
 		e.preventDefault();
 		//add
 		try {
+			console.log(value, "value");
+			const { firstname, lastname, email, phone, password } = value;
 			axios.post(
 				`http://localhost:4001/patient/`,
 				
-					value,
+				{firstname, lastname, email, phone, password}
 				
 			)
 			
-				.then()
-		} catch (err) {
-			console.log(err, "register");
+				.then(
+					(res) => {
+						console.log(res.data, "res.data");
+						console.log(res.status, "res.status");
+						console.log(res.statusText, "res.statusText");
+						console.log(res.headers, "res.headers");
+						console.log(res.config, "res.config");
+					}
+				)
+		} catch (error) {
+			console.log(error);
+
 		}
 
 	};
@@ -81,7 +91,7 @@ const SignUpPages: React.FC<Usersignup> = () => {
 							variant="outlined"
 							label='Prenom'
 							fullWidth
-							name='firstName'
+							name='firstname'
 							required
 							onChange={handleChange}
 						/>
@@ -94,7 +104,7 @@ const SignUpPages: React.FC<Usersignup> = () => {
 								variant="outlined"
 								required
 								onChange={handleChange}
-								name='lastName'
+								name='lastname'
 							/>
 						</div>
 						<div className='form-group'>
@@ -140,6 +150,7 @@ const SignUpPages: React.FC<Usersignup> = () => {
 								fullWidth
 							/>
 						</div>
+						{error}
 		{/* <div className="form-group">
         			  <label>Confirm Password</label>
         			  <input
