@@ -7,7 +7,7 @@ module.exports = (error, request, response, next) => {
     status = SERVER_ERROR;
     message = "Oups ! Quelque chose ne fonctionne pas !";
     description = 
-    "Le serveur SwimangoApi rencontre un problème technique. Veuillez réessayer plus tard.";
+    "Le serveur HospitalApi rencontre un problème technique. Veuillez réessayer plus tard.";
   }
   if (error.name === "ValidationError") {
     response.status(status).json({
