@@ -1,12 +1,13 @@
-import { Link as RouterLink } from "react-router-dom";
+import { Link, Link as RouterLink } from "react-router-dom";
 import MenuIcon from "@material-ui/icons/Menu";
-import { AppBar, Toolbar, Typography, makeStyles, Button, IconButton,Drawer } from "@material-ui/core";
-import { display } from "@mui/system";
+import { AppBar, Toolbar, Typography, makeStyles, Button, IconButton,Drawer, MenuItem } from "@material-ui/core";
+// import { display } from "@mui/system";
 import React, { FC, useState, useEffect } from "react";
 
 interface HeaderState {
 	// readonly navBar : navBarState;
 	mobileView?: boolean;
+    drawerOpen?: boolean;
 }
 
 const useStyles = makeStyles(() => ({
@@ -31,31 +32,34 @@ const useStyles = makeStyles(() => ({
      toolBar: {
          display:"flex",
          justifyContent: "space-between",
-     }
+     },
+     drawerContainer: {
+        padding: "20px 30px",
+      }
 }));
 
 const headersData = [
     {
-        label: "Listings",
-        href: "/listings",
+        label: "Se connecter",
+        href: "/login",
       },
       {
-        label: "Mentors",
-        href: "/mentors",
+        label: "S'inscrire",
+        href: "/signup",
       },
       {
-        label: "My Account",
-        href: "/account",
+        label: "Accueil",
+        href: "/",
       },
       {
-        label: "Log Out",
-        href: "/logout",
+        label: "Mon compte",
+        href: "/profil",
       },
 ];
 
 const Header: FC<HeaderState> = () => {
 
-	const { header, logo, menuButton, toolBar } = useStyles();
+	const { header, logo, menuButton, toolBar, drawerContainer } = useStyles();
 
 	const displayDesktop = () => {
 		return (
@@ -115,6 +119,23 @@ const Header: FC<HeaderState> = () => {
 			window.removeEventListener("resize", () => setResponsiveness());
 		};
 	}, []);
+    const getDrawerChoices = () => {
+        return headersData.map(({ label, href }) => {
+            return (
+                <Link
+                {...{
+                    component: RouterLink,
+                    to: href,
+                    color: "inherit",
+                    style: { textDecoration: "none" },
+                    key: label,
+                }}
+                >
+                    <MenuItem>{label}</MenuItem>
+                </Link>
+            );
+        });
+    };
 
     const displayMobile = () => {
         const handleDrawerOpen = () => 
@@ -142,17 +163,18 @@ const Header: FC<HeaderState> = () => {
                     onClose: handleDrawerClose,
                   }}
               > 
-              {/* <div>{getDrawerChoices()}</div> */}
+              <div className={drawerContainer}>{getDrawerChoices()}</div>
               </Drawer>
       <div>{hospitalLogo}</div>
       </Toolbar>
           );
     };
+
     
 	return (
 		<header>
 			<AppBar className={header}>
-				{/* {mobileView ? displayMobile() : displayDesktop()} */}
+				{mobileView ? displayMobile() : displayDesktop()}
 			</AppBar>
 		</header>
 	);
