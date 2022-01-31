@@ -1,0 +1,12 @@
+POST http://localhost:4001/patient/
+Content-Type: application/json
+
+   {
+         "firstname": "John",
+         "lastname": "Doe",
+         "email":"test",
+        "password":"test"
+}
+
+#####
+GET http://localhost:4001/patient/

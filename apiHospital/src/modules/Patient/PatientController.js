@@ -18,14 +18,16 @@ const PatientController = {
     },
     register: async (req, res, next) => {
         try {
-          const { first_name, email, password } = req.body;
-          
+          console.log(req.body, "req.body");
+          const { firstname, email, password, phone, lastname} = req.body;
+          if (!firstname || !email || !password) {
+            throw new BadRequestError('Missing parameters');
+          }
           const emailExists = await Patient.findOne({
               where: {
                 email: email,
               },
           });
-          //je suis de retour
           if(emailExists) {
             throw new BadRequestError('This is Patient already exist');  
           } else {
@@ -33,7 +35,9 @@ const PatientController = {
             const hashedPassword = await bcrypt.hash(password, salt);
             
             const patient = await Patient.create({
-              first_name,
+              phone,
+              lastname,
+              firstname,
               email,
               password: hashedPassword,
             });
@@ -68,7 +72,7 @@ const PatientController = {
               await patient.save();
               res.header( 'authorization',  'Bearer ' +  patient.access_token );
               res.cookie('refresh_token', patient.refresh_token, { expiresIn: '60d', httpOnly: 'true'});
-              res.status(CREATED).json('Hello patient ' + patient.first_name);
+              res.status(CREATED).json('Hello patient ' + patient.firstname);
 
             }
 

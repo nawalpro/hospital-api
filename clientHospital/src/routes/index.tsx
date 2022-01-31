@@ -11,7 +11,7 @@ function index() {
     <Router>
       <Routes>
         <Route path="/" element={<LoginPage />} />
-        <Route path="/signup" element={< SignUpPages />} />
+        <Route path="/signup" element={<SignUpPages />} />
         <Route path="/todo" element={<Home />} />
         <Route path="/dashboard" element={<DashboardPage />} />
       </Routes>
