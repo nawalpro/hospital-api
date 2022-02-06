@@ -2,13 +2,9 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { TextField, Button, makeStyles, Typography } from "@material-ui/core";
 
-export type usersignup = {
+export type usersignIn = {
   email?: string;
   password?: string;
-  number?: string;
-  adresse?: string;
-  lastName?: string;
-  firstName?: string;
 };
 
 const useStyles = makeStyles({
@@ -21,11 +17,22 @@ const useStyles = makeStyles({
   },
 });
 
-function FormStyled() {
+const  LOginPage : React.FC<BudgetProps> = () => {
   const classes = useStyles();
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const handleChange = () => {
+    setEmail("new data");
+    setPassword("new data");
+  };
 
   return (
     <section className={classes.root}>
+
+
       <Typography variant="h4">Se connecter</Typography>
 
       <form className={classes.root}>
@@ -37,6 +44,7 @@ function FormStyled() {
             name="email"
             variant="outlined"
             color="primary"
+            onChange={handleChange}
             required
           />
         </div>
@@ -49,6 +57,7 @@ function FormStyled() {
             name="password"
             variant="outlined"
             color="primary"
+            onChange={handleChange}
             required
           />
         </div>
@@ -73,24 +82,22 @@ function FormStyled() {
           </p>
           <p>
             Tous les champs indiqués par un "<span className="required">*</span>
-            " sont obligatoires.<br/>Merci de remplir le formulaire.
+            " sont obligatoires.
+            <br />
+            Merci de remplir le formulaire.
           </p>
         </div>
       </form>
     </section>
   );
 }
-const LoginPage = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-
-  return (
-    <>
-      <h1>LOGIN PAGE</h1>
-      <FormStyled></FormStyled>
-    </>
-  );
-};
+// const LoginPage = () => {
+//   return (
+//     <>
+//       <h1>LOGIN PAGE</h1>
+//       <HandleLogin></HandleLogin>
+//     </>
+//   );
+// };
 
 export default LoginPage;
