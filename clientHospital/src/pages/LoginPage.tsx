@@ -2,12 +2,12 @@ import React, {useState} from "react";
 import { Link } from "react-router-dom";
 
 export type usersignup = {
-    email: string,
-    password: string,
-    tele : string,
-    adresse : string,
-    nom : string,
-    prenom : string
+    email?: string,
+    password?: string,
+    number? : string,
+    adresse? : string,
+    lastName? : string,
+    firstName? : string
 
 }
 
