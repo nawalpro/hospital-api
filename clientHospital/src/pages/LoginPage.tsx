@@ -17,7 +17,8 @@ const useStyles = makeStyles({
   },
 });
 
-const  LOginPage : React.FC<BudgetProps> = () => {
+const  LoginPage : React.FC<usersignIn> = () => {
+
   const classes = useStyles();
 
   const [email, setEmail] = useState("");
