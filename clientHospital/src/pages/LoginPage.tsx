@@ -1,11 +1,14 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, FormEvent, ChangeEvent } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 import { TextField, Button, makeStyles, Typography } from "@material-ui/core";
 
-export type usersignIn = {
-  email?: string;
-  password?: string;
-};
+// export type usersignIn = {
+
+//     email?: string;
+//     password?: string;
+
+// };
 
 const useStyles = makeStyles({
   root: {
@@ -17,55 +20,80 @@ const useStyles = makeStyles({
   },
 });
 
-const  LoginPage : React.FC<usersignIn> = () => {
+// const LoginPage: React.FC<usersignIn> = () => {
 
+function LoginPage() {
   const classes = useStyles();
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [error, setError] = useState<string>("");
 
-  const handleChange = () => {
-    setEmail("new data");
-    setPassword("new data");
+  //Autre façon de typer si il y'a une interface const [form, setForm] = useState<usersignIn>({ email: "f", password: "gf", });
+
+  const oneChangeEmail = (e: ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
+  };
+  const oneChangePassword = (e: ChangeEvent<HTMLInputElement>) => {
+    setPassword(e.target.value);
+  };
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    try {
+
+      axios.post(`http://localhost:8000/patient/auth`, { email, password });
+      console.log("connecté");
+
+    } catch (error) {
+      
+      console.log("erreur");
+    }
   };
 
   return (
     <section className={classes.root}>
-
-
       <Typography variant="h4">Se connecter</Typography>
 
-      <form className={classes.root}>
+      <form action="POST" className={classes.root} onSubmit={handleSubmit}>
         <div className={classes.fieldStyle}>
           <TextField
-            id="outlined-basic"
+            // id="outlined-basic"
+            value={email}
             type="email"
             label="email"
             name="email"
             variant="outlined"
             color="primary"
-            onChange={handleChange}
+            onChange={oneChangeEmail}
             required
           />
         </div>
 
         <div className={classes.fieldStyle}>
           <TextField
+            value={password}
             type="password"
             id="outlined-basic"
             label="password"
             name="password"
             variant="outlined"
             color="primary"
-            onChange={handleChange}
+            onChange={oneChangePassword}
             required
           />
         </div>
 
-        <div className="form-group">
+        <input
+          id="formButton"
+          className="btn btn-primary"
+          type="submit"
+          placeholder="Valider"
+        />
+
+        {/* <div className="form-group">
           <Button
-            onClick={() => console.log("hello world")}
             size="large"
             href="#"
             variant="contained"
@@ -75,7 +103,7 @@ const  LoginPage : React.FC<usersignIn> = () => {
           >
             Valider
           </Button>
-        </div>
+        </div>  */}
 
         <div className="form-group">
           <p>
@@ -92,13 +120,4 @@ const  LoginPage : React.FC<usersignIn> = () => {
     </section>
   );
 }
-// const LoginPage = () => {
-//   return (
-//     <>
-//       <h1>LOGIN PAGE</h1>
-//       <HandleLogin></HandleLogin>
-//     </>
-//   );
-// };
-
 export default LoginPage;
