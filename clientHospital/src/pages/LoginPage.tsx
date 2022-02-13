@@ -23,13 +23,14 @@ const useStyles = makeStyles({
 // const LoginPage: React.FC<usersignIn> = () => {
 
 function LoginPage() {
+
   const classes = useStyles();
 
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [error, setError] = useState<string>("");
 
-  //Autre façon de typer si il y'a une interface const [form, setForm] = useState<usersignIn>({ email: "f", password: "gf", });
+  //Autre façon de faire si il y'a une interface const [form, setForm] = useState<usersignIn>({ email: "f", password: "gf", });
 
   const oneChangeEmail = (e: ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
