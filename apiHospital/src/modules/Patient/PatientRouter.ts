@@ -1,16 +1,15 @@
 import { Router } from "express";
-import { auth } from "../../middlewares";
 import PatientController from "./ControllerPatient";
 
 export default ((controller: PatientController) => {
-    const userRouter = Router();
+    const patientRouter = Router();
 
-    userRouter
+    patientRouter
         .route('/')
-        .get(auth.isAuth, controller.getAll)
+        .get( controller.getAll)
         .post(controller.register);
 
-    userRouter.route(`/auth`).post(controller.login);
+    patientRouter.route(`/auth`).post(controller.login);
 
-    return userRouter;
+    return patientRouter;
 });

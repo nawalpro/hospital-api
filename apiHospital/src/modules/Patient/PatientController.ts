@@ -28,7 +28,7 @@ class PatientController {
   register = async (req: Request, res: Response, next: NextFunction) => {
     console.log(req.body, "req.body");
     
-    const patient = await this.patientService.register({...req.body});
+    const patient = await this.PatientService.register({...req.body});
     res.status(201).json(patient);
 
   
