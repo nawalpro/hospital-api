@@ -1,3 +1,4 @@
+
 const { NOT_FOUND } = require("../StatusCode");
 
 module.exports = class NotFoundError extends Error {

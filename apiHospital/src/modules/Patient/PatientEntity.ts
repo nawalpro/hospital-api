@@ -1,5 +1,5 @@
-const { Model, DataTypes } = require('sequelize');
-const db = require('../../config/database');
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, BaseEntity } from "typeorm";
+// import { } from 
 
 class Patient extends Model {
     static init(sequelize) {
