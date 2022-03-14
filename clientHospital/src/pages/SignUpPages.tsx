@@ -182,7 +182,7 @@ const SignUpPages: React.FC<Usersignup> = () => {
 
 						<div className='form-group'>
 							<p>
-								Vous avez déjà un compte ?<Link to='/'> Cliquez ici.</Link>
+								Vous avez déjà un compte ?<Link to='/login'> Cliquez ici.</Link>
 							</p>
 							<p>
 								Tous les champs indiqués par un "
