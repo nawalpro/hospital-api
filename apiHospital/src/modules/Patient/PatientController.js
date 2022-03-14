@@ -65,7 +65,7 @@ const PatientController = {
             console.log("LOGIN req body after veriyemail", patient);
             const verifyPasswordBcrypt = await bcrypt.compare(password, patient.password);
             if(!verifyPasswordBcrypt) {
-              throw new BadRequestError("Your password is false .");
+              throw new BadRequestError("Vos identifiants ne sont pas valides");
             } else {
               patient.access_token = jwt.sign({ id: patient.id , email: patient.email }, env.jwt_secret, { expiresIn: '5m' });
               patient.refresh_token = jwt.sign({ id: patient.id }, env.jwt_secret, { expiresIn: '60d' });
