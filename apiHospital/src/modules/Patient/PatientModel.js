@@ -13,7 +13,7 @@ class Patient extends Model {
                 },
                 firstname: DataTypes.STRING,
                 lastname: DataTypes.STRING,
-                phone: DataTypes.STRING,
+                phone: DataTypes.INTEGER,
                 
                 email: {
                     type: DataTypes.STRING,

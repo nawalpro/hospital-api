@@ -41,7 +41,6 @@ const SignUpPages: React.FC<Usersignup> = () => {
 		lastname: '',
 		email: '',
 		phone: '',
-		// adress: '',
 		password: '',
 	});
 
