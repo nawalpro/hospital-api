@@ -1,34 +1,33 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, BaseEntity } from "typeorm";
-// import { } from 
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  ManyToOne,
+  BaseEntity,
+  OneToMany,
+} from "typeorm";
+// import { Doctor } from
 
-class Patient extends Model {
-    static init(sequelize) {
-        return super.init(   {
-            id: {
-                type: DataTypes.UUID,
-                primaryKey: true,
-                allowNull: false,
-                defaultValue: DataTypes.UUIDV4
-            },
-            firstname: DataTypes.STRING,
-            lastname: DataTypes.STRING,
-            phone: DataTypes.STRING,
-            
-            email: {
-                type: DataTypes.STRING,
-            },
-            
-            password: DataTypes.STRING,
-         
-        },
-        { sequelize, modelName: 'Patient' }
-    );
-}
-static associate(models) {
-    return this;
-}
-  
-}
-Patient.init(db.sequelize);
+@Entity()
+export class Patient extends BaseEntity {
+  @PrimaryGeneratedColumn()
+  id: any;
 
-module.exports = Patient;
+  @Column()
+  firstname!: string;
+
+  @Column()
+  lastname!: string;
+
+  @Column()
+  phone!: string;
+
+  @Column()
+  email!: string;
+
+  @Column()
+  password!: string;
+
+//   @OneToMany(() => Doctor, doctor => patient.doctor)
+//   patients: any;
+}

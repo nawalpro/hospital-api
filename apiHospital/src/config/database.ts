@@ -1,7 +1,6 @@
 import {getConnectionManager} from "typeorm";
-import { Book } from '../modules/Book/EntityBook';
-import { User } from '../modules/User/EntityUser';
-import config from "./env";
+import { config } from '.env'
+
 
 const entities = [User, Book];
 

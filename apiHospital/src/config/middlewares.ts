@@ -1,7 +1,6 @@
 const express = require("express");
 const cookieParser = require('cookie-parser');
 const cors = require("cors");
-const env = require("./env");
 
 const middlewares = {
     cors: cors({

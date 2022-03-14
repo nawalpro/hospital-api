@@ -14,4 +14,4 @@ PatientRouter.route(`${entrypoint}/auth`).post(PatientController.login);
 // PatientRouter.route(`${entrypoint}/auth/refresh`).get(refreshAccess);
 
 
-module.exports = PatientRouter;
+module.exports = Patient;

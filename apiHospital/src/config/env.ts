@@ -2,9 +2,9 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 
-const env = {
-    port: process.env.PORT || 4001,
-    username: process.env.DB_USER,
+const Env = {
+    port: Number( process.env.PORT || 4001),
+    username:  process.env.DB_USER,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
     host: process.env.DB_HOST,
@@ -13,6 +13,6 @@ const env = {
     front_end_url: process.env.FRONT_END_URL,
     dialect: "mysql",
     seederStorage: "sequelize",
-}
+};
 
-module.exports = env;
+module.exports = Env;
