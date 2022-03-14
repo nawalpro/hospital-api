@@ -57,10 +57,27 @@ const PatientController = {
             email,
             password: hashedPassword,
           });
+<<<<<<< HEAD
           console.log(patient, "After create");
           res.status(201).json(patient);
         }
       }
+=======
+          if (!patient) {
+            throw new BadRequestError("Sorry! Account does not exists .")
+          } else {
+            console.log("LOGIN req body after veriyemail", patient);
+            const verifyPasswordBcrypt = await bcrypt.compare(password, patient.password);
+            if(!verifyPasswordBcrypt) {
+              throw new BadRequestError("Vos identifiants ne sont pas valides");
+            } else {
+              patient.access_token = jwt.sign({ id: patient.id , email: patient.email }, env.jwt_secret, { expiresIn: '5m' });
+              patient.refresh_token = jwt.sign({ id: patient.id }, env.jwt_secret, { expiresIn: '60d' });
+              await patient.save();
+              res.header( 'authorization',  'Bearer ' +  patient.access_token );
+              res.cookie('refresh_token', patient.refresh_token, { expiresIn: '60d', httpOnly: 'true'});
+              res.status(CREATED).json('Hello patient ' + patient.firstname);
+>>>>>>> d248b5522af7b02cddd119a8f57f2d0fec34029b
 
     } catch (err) {
       console.log(err, "ERROOR REGISTER PATIENT");
