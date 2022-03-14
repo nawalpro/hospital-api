@@ -43,7 +43,6 @@ function LoginPage() {
     e.preventDefault();
 
     try {
-
       axios.post(`http://localhost:8000/patient/auth`, { email, password });
       console.log("connecté");
 
