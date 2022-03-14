@@ -1,17 +1,16 @@
-const  Router  = require ('express');
-const isAuth = require('../../middlewares/auth');
-const PatientController = require( './PatientController');
-const Patient = require( './PatientModel');
+import { Router } from "express";
+import { auth } from "../../middlewares";
+import PatientController from "./ControllerPatient";
 
-const PatientRouter = Router();
-const entrypoint = '/patient';
+export default ((controller: PatientController) => {
+    const userRouter = Router();
 
-PatientRouter
-    .route(`${entrypoint}`)
-        .get(PatientController.getAll)
-        .post(PatientController.register);
-PatientRouter.route(`${entrypoint}/auth`).post(PatientController.login);
-// PatientRouter.route(`${entrypoint}/auth/refresh`).get(refreshAccess);
+    userRouter
+        .route('/')
+        .get(auth.isAuth, controller.getAll)
+        .post(controller.register);
 
+    userRouter.route(`/auth`).post(controller.login);
 
-module.exports = Patient;
+    return userRouter;
+});
