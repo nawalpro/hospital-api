@@ -74,3 +74,32 @@
 {"level":"info","message":"::ffff:127.0.0.1 - - [15/Mar/2022:16:27:58 +0000] \"POST /patient/ HTTP/1.1\" 404 148 \"-\" \"vscode-restclient\"\n"}
 {"level":"info","message":"::ffff:127.0.0.1 - - [15/Mar/2022:16:27:59 +0000] \"POST /patient/ HTTP/1.1\" 404 148 \"-\" \"vscode-restclient\"\n"}
 {"level":"info","message":"::ffff:127.0.0.1 - - [15/Mar/2022:16:28:14 +0000] \"POST /patient/ HTTP/1.1\" 404 148 \"-\" \"vscode-restclient\"\n"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [15/Mar/2022:21:30:32 +0000] \"POST /patient/ HTTP/1.1\" 404 148 \"-\" \"vscode-restclient\"\n"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [15/Mar/2022:21:30:33 +0000] \"POST /patient/ HTTP/1.1\" 404 148 \"-\" \"vscode-restclient\"\n"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [15/Mar/2022:21:30:35 +0000] \"POST /patient/ HTTP/1.1\" 404 148 \"-\" \"vscode-restclient\"\n"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [15/Mar/2022:21:30:36 +0000] \"POST /patient/ HTTP/1.1\" 404 148 \"-\" \"vscode-restclient\"\n"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [15/Mar/2022:22:02:37 +0000] \"POST /patient/ HTTP/1.1\" 404 148 \"-\" \"vscode-restclient\"\n"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [15/Mar/2022:22:02:45 +0000] \"GET /patient/ HTTP/1.1\" 404 147 \"-\" \"vscode-restclient\"\n"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [15/Mar/2022:22:02:46 +0000] \"GET /patient/ HTTP/1.1\" 404 147 \"-\" \"vscode-restclient\"\n"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [15/Mar/2022:22:06:02 +0000] \"POST /patient/ HTTP/1.1\" 404 148 \"-\" \"vscode-restclient\"\n"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [15/Mar/2022:22:06:04 +0000] \"POST /patient/ HTTP/1.1\" 404 148 \"-\" \"vscode-restclient\"\n"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [15/Mar/2022:22:06:04 +0000] \"POST /patient/ HTTP/1.1\" 404 148 \"-\" \"vscode-restclient\"\n"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [15/Mar/2022:22:06:04 +0000] \"POST /patient/ HTTP/1.1\" 404 148 \"-\" \"vscode-restclient\"\n"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [15/Mar/2022:22:06:04 +0000] \"POST /patient/ HTTP/1.1\" 404 148 \"-\" \"vscode-restclient\"\n"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [15/Mar/2022:22:06:05 +0000] \"POST /patient/ HTTP/1.1\" 404 148 \"-\" \"vscode-restclient\"\n"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [15/Mar/2022:22:06:05 +0000] \"POST /patient/ HTTP/1.1\" 404 148 \"-\" \"vscode-restclient\"\n"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [15/Mar/2022:22:06:12 +0000] \"POST /patient/ HTTP/1.1\" 404 148 \"-\" \"vscode-restclient\"\n"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [15/Mar/2022:22:27:07 +0000] \"POST /patient/ HTTP/1.1\" 404 148 \"-\" \"vscode-restclient\"\n"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [15/Mar/2022:22:27:08 +0000] \"POST /patient/ HTTP/1.1\" 404 148 \"-\" \"vscode-restclient\"\n"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [15/Mar/2022:22:27:12 +0000] \"POST /patient/ HTTP/1.1\" 404 148 \"-\" \"vscode-restclient\"\n"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [15/Mar/2022:22:27:24 +0000] \"GET /patient/ HTTP/1.1\" 404 147 \"-\" \"vscode-restclient\"\n"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [15/Mar/2022:22:29:20 +0000] \"POST /patient/ HTTP/1.1\" 500 73 \"-\" \"vscode-restclient\"\n"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [15/Mar/2022:22:29:26 +0000] \"GET /patient/ HTTP/1.1\" 401 37 \"-\" \"vscode-restclient\"\n"}
