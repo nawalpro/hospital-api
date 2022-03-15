@@ -3,9 +3,9 @@ import PatientController from "./PatientController"
 
 export default ((controller: PatientController) => {
     const patientRouter = Router();
-    const entrypoint = '/patient';
+    const entrypoint = '/patient/';
     patientRouter
-        .route('/')
+        .route(`${entrypoint}`)
         .get( controller.getAll)
         .post(controller.register);
 
