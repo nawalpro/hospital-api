@@ -7,4 +7,4 @@ build/
 tmp/
 temp/
 .env
-*DS_Store
+*.DS_Store
