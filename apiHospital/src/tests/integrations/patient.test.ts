@@ -15,7 +15,7 @@ afterAll(async () => {
     await database.close();
 });
 
-
+//inscription?
 describe("POST /patient", () => {
 
     it("Should return a 201 http status code and return the spécified data", async () => {
@@ -29,7 +29,7 @@ describe("POST /patient", () => {
     });
 
 });
-
+//connexion?
 describe("POST /patient/auth", () => {
 
     it("Should return a 200 http status code", async () => {
