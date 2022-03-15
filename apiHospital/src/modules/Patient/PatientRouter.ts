@@ -1,9 +1,9 @@
 import { Router } from "express";
-import PatientController from "./ControllerPatient";
+import PatientController from "./PatientController"
 
 export default ((controller: PatientController) => {
     const patientRouter = Router();
-
+    const entrypoint = '/patient';
     patientRouter
         .route('/')
         .get( controller.getAll)

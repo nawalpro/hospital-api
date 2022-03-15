@@ -1,18 +1,15 @@
-const dotenv = require('dotenv');
+
+import dotenv from 'dotenv';
 dotenv.config();
 
+const config = {
+    app_port: Number(process.env.APP_PORT || 3001),
+    db_port: Number(process.env.DB_PORT),
+    db_name: process.env.DB_NAME,
+    db_user: process.env.DB_USER,
+    db_host: process.env.DB_HOST,
+    db_password: process.env.DB_PASSWORD,
+    jwt_secret: String(process.env.JWT_SECRET) 
+}
 
-const Env = {
-    port: Number( process.env.PORT || 4001),
-    username:  process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME,
-    host: process.env.DB_HOST,
-    jwt_secret: process.env.JWT_SECRET,
-    salt_rounds: process.env.SALT_ROUNDS,
-    front_end_url: process.env.FRONT_END_URL,
-    dialect: "mysql",
-    seederStorage: "sequelize",
-};
-
-module.exports = Env;
+export default config;

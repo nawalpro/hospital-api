@@ -1,7 +1,7 @@
-const ServiceRouter = require('./Service/ServiceRouter')
-const PatientRouter = require('./Patient/PatientRouter')
-const DoctorRouter = require('./Doctor/DoctorRouter')
+// const ServiceRouter = require('./Service/ServiceRouter')
+const PatientController = require('./Patient/PatientController');
+// const DoctorRouter = require('./Doctor/DoctorRouter')
 
-const routes = [ ServiceRouter, PatientRouter, DoctorRouter ];
+const routes = [ PatientController ];
 
-module.exports = routes;
+export default  routes;

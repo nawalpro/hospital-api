@@ -1,32 +1,37 @@
-const errorHandler = require("../middlewares/errorHandler");
+import { Response } from 'express';
+import { Request } from 'express';
+import {handleError} from '../helpers/ErrorHelpers';
+import { Server } from '@overnightjs/core'
 
-const Server = (http, middleWares, routes) => {
-    const app = http();
-    
-    const initializeMiddlewares = (middleWares) => {
-        for (const key in middleWares) {
-            const mware = middleWares[key];
-            app.use(mware);
+class App extends Server {
+
+    constructor(routes: Array<Object>, middlewares: Object) {
+        super();
+
+        this.initializeMiddlewares(middlewares);
+        super.addControllers(routes);
+        this.initializeErrorHandler();
+    }
+
+    initializeMiddlewares(middlewares: any) {
+        for (const key in middlewares) {
+            if (key === 'csrf') {
+                this.app.get('/csrf', middlewares[key], (req: Request | any, res: Response) => {
+                    res.status(200).json(req.csrfToken());
+                })
+            }
+            else
+                this.app.use(middlewares[key]);
         }
-    };
+    }
 
-    const initializeAppRouter = (routes) => {
-        app.use(routes);
-        app.use(errorHandler);
-    };
-    initializeMiddlewares(middleWares);
-    initializeAppRouter(routes);
-    return {
-        listen: (port) => {
-            app.listen(port, async () => {
-                console.debug(`Server is listening on port ${port}`);
-                console.log('===============================');
-                console.log(`server is running on port ${port}`);
-                console.log('===============================');
-            });
-        },
-    };
-};
+    initializeErrorHandler() {
+        this.app.use(handleError);
+    }
 
-module.exports = Server;
+    listen(port:Number) {
+        this.app.listen(port, async () => console.log(`application started on port : ${port}`));
+    }
+}
 
+export default App;

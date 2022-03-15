@@ -1,11 +1,4 @@
-import {
-  Entity,
-  PrimaryGeneratedColumn,
-  Column,
-  ManyToOne,
-  BaseEntity,
-  OneToMany,
-} from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, BaseEntity } from "typeorm";
 // import { Doctor } from
 
 @Entity()
@@ -20,7 +13,7 @@ export class Patient extends BaseEntity {
   lastname!: string;
 
   @Column()
-  phone!: string;
+  phone!: number;
 
   @Column()
   email!: string;
@@ -30,4 +23,15 @@ export class Patient extends BaseEntity {
 
 //   @OneToMany(() => Doctor, doctor => patient.doctor)
 //   patients: any;
+}
+
+
+export type patient = {
+  
+  firstname: string,
+  lastname: string,
+  phone: number,
+  email: string,
+  password: string,
+
 }

@@ -6,13 +6,15 @@ import { Patient } from "./PatientEntity";
 export interface IPatientRepository {
   findAll(): Promise<Patient[]>;
   addNew(patientEntity: any): Promise<Patient>;
-  findByeEmail(patientEntity: any): Promise<Patient | undefined>;
+  findByEmail(patientEntity: any): Promise<Patient | undefined>;
   compareHash(password: string, hash: string): Promise<boolean>;
 }
 
 @EntityRepository()
 class PatientRepository implements IPatientRepository {
+
   constructor(private manager: EntityManager) {}
+
   async findAll() {
     return await this.manager.find(Patient);
   }
@@ -23,12 +25,10 @@ class PatientRepository implements IPatientRepository {
     return await this.manager.save(Patient, patientEntity);
   }
 
-  async findByeEmail(patientEntity: any) {
+  async findByEmail(patientEntity: any) {
     console.log(patientEntity);
     return await this.manager.findOne(Patient, { email: patientEntity.email });
   }
-
-  compareHash = async (password: string, hash: string) =>
-    await bcrypt.compareSync(password, hash);
+  compareHash = async (password: string, hash: string) => await bcrypt.compareSync(password, hash);
 }
 export default PatientRepository;

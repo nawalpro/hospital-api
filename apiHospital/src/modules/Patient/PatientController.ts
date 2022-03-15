@@ -1,55 +1,55 @@
 import { Response, Request, NextFunction } from "express";
-import { Controller, Middleware, Get, Post, Put, Delete } from '@overnightjs/core';
+import { Controller, Middleware, Get, Post, Put, Delete } from '@overnightjs/core'
+import JwtService from "../../libs/jwt";
+import { IPatientService } from './PatientService';
+import { auth } from "../../middlewares";
 
-// const Patient = require('./PatientModel');
-// const bcrypt = require('bcrypt');
-// const env = require('../../config/env');
-// const BadRequestError = require('../../helpers/errors/400_bad_request');
-// const jwt = require('jsonwebtoken');
-// const { CREATED } = require('../../helpers/StatusCode');
-
-@Controller('patients')
+@Controller('patient')
 class PatientController {
-  
-  @Get()
-  @middlewares(auth.isAuth)
-  getAll = async (req: Request, res: Response, next: NextFunction) => {
-    try {
-      const patients = await this.patientService.findAll();
-      res.status(201).json(patients);
-    } catch (err) {
-      console.log(err, "GET ALL PATIENT");
-      next(err);
-      console.log(err);
+    private patienService;
+    private jwtService;
+    constructor(patienService: IPatientService, jwtService: JwtService) {
+        this.patienService = patienService;
+        this.jwtService = jwtService;
     }
-  }
 
-  @Post()
-  register = async (req: Request, res: Response, next: NextFunction) => {
-    console.log(req.body, "req.body");
-    
-    const patient = await this.PatientService.register({...req.body});
-    res.status(201).json(patient);
-
-  
-    } catch (err) {
-      console.log(err, "ERROOR REGISTER PATIENT");
-      next(err);
+    @Get()
+    @Middleware(auth.isAuth)
+    getAll = async (req: Request, res: Response, next: NextFunction) => {
+        try {
+            let users = await this.patienService.getAll();
+            res.status(200).json(users);
+        } catch (err) {
+            next(err);
+        }
     }
-  }
 
-  @Post('login')
-  login = async (req: Request, res: Response, next: NextFunction) => {
-    try {
-      const patient = await this.patientService.login({...req.body});
-      const token = await this.jwtService.generateToken({ id: patient.id });
-      res.cookie('auth-cookie', token, {expires: new Date(Date.now() + (30 * 86400 * 1000))});
-      res.status(200).json(patient);
-  } catch (err) {
-      next(err);
-  }
+    @Post()
+    register = async (req: Request, res: Response, next: NextFunction) => {
+        try {
+            console.log('toto', req.body);
+            const user = await this.patienService.register({...req.body});
+            res.status(201).json(user);
+        }
+        catch (err) {
+            next(err);
+            console.log(err, "err register");
+            
+        }
+    }
 
-  }
+    @Post('login')
+    login = async (req: Request, res: Response, next: NextFunction) => {
+        try {
+            const user = await this.patienService.login({...req.body});
+            const token = await this.jwtService.generateToken({ id: user.id });
+            res.cookie('auth-cookie', token, {expires: new Date(Date.now() + (30 * 86400 * 1000))});
+            res.status(200).json(user);
+        } catch (err) {
+            next(err);
+        }
+
+    }
 }
 
-module.exports = PatientController;
+export default PatientController;

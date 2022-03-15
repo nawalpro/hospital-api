@@ -1,7 +1,8 @@
 import PatientDTO from './PatientDto';
+import { ApiError } from '../../helpers/ErrorHelpers';
+import { IMailerService } from './../../libs/mailer';
 import { IPatientRepository } from './PatientRepository';
 import { Patient } from './PatientEntity';
-import { handleError } from "../../middlewares/handleError";
 
 export interface IPatientService {
     getAll() : Promise<PatientDTO[]>
@@ -13,21 +14,20 @@ export default class PatientService implements IPatientService {
 
     private patientRepo;
     private mailerService;
-
     constructor(patientRepository: IPatientRepository, mailerService : IMailerService) {
         this.patientRepo = patientRepository;
         this.mailerService = mailerService;
     }
 
     async getAll() {
-        const patients = await this.patientRepo.findAll();
-        return patients.map((patient: any) => new PatientDTO(patient));
+        const users = await this.patientRepo.findAll();
+        return users.map((patient: any) => new PatientDTO(patient));
     }
 
     async register(patientData: Patient) {
         
         if (!patientData.email || !patientData.password)
-            throw new handleError( 400 , 'Missing required email and password fields');
+            throw new ApiError(400, 'Missing required email and password fields');
         
         const newPatient = await this.patientRepo.addNew(patientData);
         await this.mailerService.sendMail(patientData);
@@ -37,17 +37,17 @@ export default class PatientService implements IPatientService {
     async login(patientData : Patient) {
 
         if (!patientData.email || !patientData.password)
-            throw new handleError(400, 'Missing required email and password fields');
+            throw new ApiError(400, 'Missing required email and password fields');
         
         const patient = await this.patientRepo.findByEmail(patientData);
         console.log(patient);
         
         if (!patient)
-            throw new handleError(400, 'Patient with the specified email does not exists');
+            throw new ApiError(400, 'patient with the specified email does not exists');
 
         const passwordMatch = await this.patientRepo.compareHash(patientData.password, patient.password);
         if (!passwordMatch)
-            throw new handleError(400, 'Patient password do not match');
+            throw new ApiError(400, 'patient password do not match');
 
         return new PatientDTO(patient);
     }

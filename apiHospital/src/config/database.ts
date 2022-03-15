@@ -1,8 +1,8 @@
 import {getConnectionManager} from "typeorm";
-import { config } from '.env'
+import { Patient } from '../modules/Patient/PatientEntity';
+import config from "./env";
 
-
-const entities = [User, Book];
+const entities = [Patient ];
 
 const connectionManager = getConnectionManager();
 const db = connectionManager.create({
