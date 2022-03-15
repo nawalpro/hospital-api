@@ -22,7 +22,7 @@ class PatientRepositoryMock implements IPatientRepository {
         return patients[patients.length - 1];
     }
 
-	async findByeEmail(email: string) {
+	async findByEmail(email: string) {
 		const results = patients.filter((patient) => patient);
 		return results[0];
 	}
