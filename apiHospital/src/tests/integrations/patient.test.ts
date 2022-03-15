@@ -23,12 +23,14 @@ describe("POST /patient", () => {
       .send({
         firstname: "Brigitte",
         lastname: "Lolekunda",
+        phone: 0989829787,
         email: "toto@test.fr",
         password: "1234",
       });
     expect(res.statusCode).toEqual(201);
     expect(res.body.firstname).toBe("Brigitte");
     expect(res.body.lastname).toBe("Lolekunda");
+    expect(res.body.phone).toBe(0989829787);
     expect(res.body.email).toBe("toto@test.fr");
     expect(res.body.password).toBe("1234");
   });

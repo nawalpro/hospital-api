@@ -11,6 +11,7 @@ describe("Patient service USE-CASE : ", () => {
         await patientService.register({
           firstname: "",
           lastname: "",
+		//   phone: ?,
           email: "",
           password: "",
         });
