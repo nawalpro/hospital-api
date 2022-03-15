@@ -2,7 +2,6 @@ const errorHandler = require("../middlewares/errorHandler");
 
 const Server = (http, middleWares, routes) => {
     const app = http();
-    
     const initializeMiddlewares = (middleWares) => {
         for (const key in middleWares) {
             const mware = middleWares[key];

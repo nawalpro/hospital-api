@@ -2,7 +2,6 @@ const Sequelize = require("sequelize");
 
 const Env = require('./env');
 
-
 const associateAll = async (models) => {
     await Object.values(models).map((model) => model.associate(models));
 };

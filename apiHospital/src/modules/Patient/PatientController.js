@@ -34,11 +34,9 @@ const PatientController = {
         }
         if (firstname.length < 2 || firstname > 15) {
 
-          throw new BadRequestError(description = 'Même si un prénom log Écrivez le  ;).');
+          throw new BadRequestError(message = 'Même si un prénom log Écrivez le  ;).');
 
         }
-
-
         const emailExists = await Patient.findOne({
           where: {
             email: email,
@@ -49,7 +47,6 @@ const PatientController = {
         } else {
           const salt = parseInt(env.salt_rounds);
           const hashedPassword = await bcrypt.hash(password, salt);
-
           const patient = await Patient.create({
             phone,
             lastname,
@@ -90,7 +87,6 @@ const PatientController = {
           res.cookie('refresh_token', patient.refresh_token, { expiresIn: '60d', httpOnly: 'true' });
           res.status(CREATED).json('Hello patient ' + patient.firstname);
         }
-
       }
     } catch (err) {
       console.error("LOGIN ERROR", err)
