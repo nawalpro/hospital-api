@@ -5,9 +5,8 @@ const env = require("./env");
 
 const middlewares = {
     cors: cors({
-        origin: 'http://localhost:3000/',
-        withCredentials: true,
-       
+        Credentials: true,
+        AccessControlAllowOrigin: "*",
     }),
     cookie: cookieParser(),
     json: express.json(),
