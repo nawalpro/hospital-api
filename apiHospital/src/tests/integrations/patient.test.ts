@@ -24,7 +24,6 @@ describe("POST /patient", () => {
         password: "1234",
       });
     expect(res.body.email).toBe("toto@test.fr");
-    expect(res.body.password).toBe("1234");
   });
 });
 
