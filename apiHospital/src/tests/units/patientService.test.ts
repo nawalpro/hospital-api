@@ -5,21 +5,24 @@ import { Patient } from "../../modules/Patient/PatientEntity";
 const patientService = new PatientService(new PatientRepositoryMock());
 
 describe("Patient service USE-CASE : ", () => {
+  
   describe("add patient use case : ", () => {
+   
     it("Should throw an error if patientData is empty or null", async () => {
       try {
         await patientService.register({
           firstname: "",
           lastname: "",
-		//   phone: ?,
           email: "",
-          password: "",
+          password: ""
+          phone: "",
         });
       } catch (e: any) {
+        
         expect(e.statusCode).toBe(400);
-        expect(e.message).toBe("Patient validation failed");
+        expect(e.message).toBe("Missing required fields");
       }
-    });
+    })
 
     // it('Should throw an error if patientdata is empty or null', async () => {
     // 	const patient = await patientService.add({ firstname: "Brigitte", lastname: "Lolekunda", email: "Lolekunda", password: "klkdeljf23"});
@@ -44,5 +47,5 @@ describe("Patient service USE-CASE : ", () => {
     // 	expect(patients[0].email).toBe("bLol@gmail.com")
     // 	expect(patients[0].password).toBe("klkdeljf23")
     // })
-  });
-});
+  })
+})

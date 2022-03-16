@@ -14,7 +14,7 @@ class PatientRepositoryMock implements IPatientRepository {
 		let patient = new Patient();
 		patient.firstname = patientEntity.firstname;
 		patient.lastname = patientEntity.lastname;
-		patient.phone = patientEntity.phone;
+		patient.phone = patientEntity.phone;z
 		patient.email = patientEntity.email;
 		patient.password = patientEntity.password;
 
