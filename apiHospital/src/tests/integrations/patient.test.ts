@@ -15,27 +15,19 @@ afterAll(async () => {
   await database.close();
 });
 
-//register
 describe("POST /patient", () => {
   it("Should return a 201 http status code and return the specified data", async () => {
     const res = await request(server.app)
       .post("/patient")
       .send({
-        firstname: "Brigitte",
-        lastname: "Lolekunda",
-        phone: 0989829787,
         email: "toto@test.fr",
         password: "1234",
       });
-    expect(res.statusCode).toEqual(201);
-    expect(res.body.firstname).toBe("Brigitte");
-    expect(res.body.lastname).toBe("Lolekunda");
-    expect(res.body.phone).toBe(0989829787);
     expect(res.body.email).toBe("toto@test.fr");
     expect(res.body.password).toBe("1234");
   });
 });
-//login
+
 describe("POST /patient/auth", () => {
   it("Should return a 200 http status code", async () => {
     const res = await request(server.app)

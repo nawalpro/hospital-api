@@ -26,7 +26,7 @@ class PatientRepositoryMock implements IPatientRepository {
 		const results = patients.filter((patient) => patient);
 		return results[0];
 	}
-    //à refacto
+    //quoi mettre?
     async compareHash(password: string, hash: string): Promise<boolean> {
     }
 }
