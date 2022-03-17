@@ -1,8 +1,13 @@
 import PatientService from "../../modules/Patient/PatientService";
 import PatientRepositoryMock from "../mocks/patientRepository.mock";
+import { IMailerService } from "./../../libs/mailer";
+import { IPatientRepository  } from "../../modules/Patient/PatientRepository";
 import { Patient } from "../../modules/Patient/PatientEntity";
+import { mailerService } from "../../libs";
+import { Any } from "typeorm";
 
-const patientService = new PatientService(new PatientRepositoryMock());
+
+const patientService = new PatientService( new PatientRepositoryMock(), mailerService);
 
 describe("Patient service USE-CASE : ", () => {
   
@@ -14,10 +19,10 @@ describe("Patient service USE-CASE : ", () => {
           firstname: "",
           lastname: "",
           email: "",
-          password: ""
-          phone: "",
+          password: "",
+          phone: 12345632112
         });
-      } catch (e: any) {
+      } catch (e:any) {
         
         expect(e.statusCode).toBe(400);
         expect(e.message).toBe("Missing required fields");
