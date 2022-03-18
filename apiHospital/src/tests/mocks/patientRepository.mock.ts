@@ -1,4 +1,4 @@
-import { Patient, patient } from "../../modules/Patient/PatientEntity";
+import { Patient } from "../../modules/Patient/PatientEntity";
 import { IPatientRepository  } from "../../modules/Patient/PatientRepository";
 
 const patients: Patient[] = [];
@@ -9,7 +9,7 @@ class PatientRepositoryMock implements IPatientRepository {
 		return patients;
 	}
 
-	async addNew(patientEntity: patient) {
+	async addNew(patientEntity: Patient) {
 
 		let patient = new Patient();
 		patient.firstname = patientEntity.firstname;
@@ -26,8 +26,9 @@ class PatientRepositoryMock implements IPatientRepository {
 		const results = patients.filter((patient) => patient);
 		return results[0];
 	}
-    //quoi mettre?
-    async compareHash(password: string, hash: string): Promise<boolean> {
+ 
+    async compareHash(password: string, hash: string) :  Promise<boolean> {
+		return true;
     }
 }
 export default PatientRepositoryMock;

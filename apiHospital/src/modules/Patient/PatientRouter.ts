@@ -9,7 +9,7 @@ export default ((controller: PatientController) => {
         .get( controller.getAll)
         .post(controller.register);
 
-    patientRouter.route(`/auth`).post(controller.login);
+    patientRouter.route(`auth/`).post(controller.login);
 
     return patientRouter;
 });
