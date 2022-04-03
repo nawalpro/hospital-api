@@ -8,7 +8,7 @@ class PatientDTO {
     public phone;
     public email;
     
-    constructor({id, firstname,lastname, password, phone, email } : {id: string, firstname: string, lastname: string, password: string, phone: number, email: string}) {
+    constructor({id, firstname,lastname, password, phone, email } : {id: number, firstname: string, lastname: string, password: string, phone: number, email: string}) {
         this.id = id;
         this.firstname = firstname;
         this.lastname = lastname;

@@ -6,7 +6,6 @@ const jwt = require("jsonwebtoken");
 
 const DoctorController = {
 
-
 	register: async (req, res, next) => {
 		try {
 			const {

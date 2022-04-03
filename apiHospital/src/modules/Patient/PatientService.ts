@@ -10,6 +10,13 @@ export interface IPatientService {
   login(patientData: any): Promise<PatientDTO>;
 }
 
+export type patientType = {
+  firstname: string,
+  lastname: string,
+  phone: number,
+  email: string,
+  password: string
+}
 export default class PatientService implements IPatientService {
   private patientRepo;
   private mailerService;
@@ -26,7 +33,8 @@ export default class PatientService implements IPatientService {
     return users.map((patient: any) => new PatientDTO(patient));
   }
 
-  async register(patientData: Patient) {
+
+  async register(patientData:patientType) {
     if (
       !patientData.firstname ||
       !patientData.lastname ||

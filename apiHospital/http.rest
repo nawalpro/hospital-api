@@ -1,12 +1,22 @@
-POST http://localhost:4001/patient/
+POST http://localhost:3001/patient/
 Content-Type: application/json
 
-   {
-         "firstname": "John",
-         "lastname": "Doe",
-         "email":"test",
-        "password":"test"
+{
+         "firstname": "xz xz` ",
+         "lastname": "zx` ",
+         "email":"a@a.fr`",
+        "password":"sac",
+        "phone":"077777877"
+}
+#############################################################################################################################
+POST http://localhost:3001/patient/auth
+Content-Type: application/json
+
+{
+         "email":"toto@test.fr",
+        "password":"1234"
 }
 
+
 #####
-GET http://localhost:4001/patient/
+GET http://localhost:3001/patient/
