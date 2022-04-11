@@ -1,1 +1,14 @@
+<<<<<<< HEAD
 node_modules
+=======
+.idea/
+.vscode/
+rest.http
+.DS_Store
+node_modules/
+build/
+tmp/
+temp/
+.env
+*DS_Store
+>>>>>>> 9be7584350679aa8b9601f2a10dd77383d9409da
