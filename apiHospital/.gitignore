@@ -1,10 +1,1 @@
-.idea/
-.vscode/
-rest.http
-
-node_modules/
-build/
-tmp/
-temp/
-.env
-*.DS_Store
+node_modules
