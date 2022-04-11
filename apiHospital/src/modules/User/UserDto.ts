@@ -1,5 +1,5 @@
 
-class PatientDTO {
+class UserDTO {
     
     public id;
     public firstname;
@@ -15,10 +15,9 @@ class PatientDTO {
         this.password = password;
         this.phone = phone;
         this.email = email;
-        // this.books = books.map((book: any) => new BookDTO(book));
     }
 
 }
 
-export default PatientDTO;
+export default UserDTO;
 

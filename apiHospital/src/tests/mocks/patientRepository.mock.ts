@@ -1,5 +1,5 @@
-import { Patient } from "../../modules/Patient/PatientEntity";
-import { IPatientRepository  } from "../../modules/Patient/PatientRepository";
+import { Patient } from "../../modules/User/UserEntity";
+import { IPatientRepository  } from "../../modules/User/UserRepository";
 
 const patients: Patient[] = [];
 

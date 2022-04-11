@@ -1,4 +1,4 @@
-import { Patient } from "../../modules/Patient/PatientEntity";
+import { Patient } from "../../modules/User/UserEntity";
 import { patient } from "../types/patient.types";
 
 export interface IBookService {

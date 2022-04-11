@@ -1,7 +1,7 @@
 import { Router } from "express";
-import PatientController from "./PatientController"
+import UserController from "./UserController"
 
-export default ((controller: PatientController) => {
+export default ((controller: UserController) => {
     const patientRouter = Router();
     const entrypoint = '/patient/';
     patientRouter

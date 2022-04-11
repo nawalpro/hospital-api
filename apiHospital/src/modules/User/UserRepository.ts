@@ -1,34 +1,34 @@
 import { EntityRepository, EntityManager } from "typeorm";
 import bcrypt from "bcrypt";
-import { Patient } from "./PatientEntity";
+import { User } from "./UserEntity";
 //importer l'entity Docteur ici
 
-export interface IPatientRepository {
-  findAll(): Promise<Patient[]>;
-  addNew(patientEntity: any): Promise<Patient>;
-  findByEmail(patientEntity: any): Promise<Patient | undefined>;
+export interface IUserRepository {
+  findAll(): Promise<User[]>;
+  addNew(patientEntity: any): Promise<User>;
+  findByEmail(patientEntity: any): Promise<User | undefined>;
   compareHash(password: string, hash: string): Promise<boolean>;
 }
 
 @EntityRepository()
-class PatientRepository implements IPatientRepository {
+class UserRepository implements IUserRepository {
 
   constructor(private manager: EntityManager) {}
 
   async findAll() {
-    return await this.manager.find(Patient);
+    return await this.manager.find(User);
   }
 
   async addNew(patientEntity: any) {
     const salt = bcrypt.genSaltSync(10);
     patientEntity.password = bcrypt.hashSync(patientEntity.password, salt);
-    return await this.manager.save(Patient, patientEntity);
+    return await this.manager.save(User, patientEntity);
   }
 
   async findByEmail(patientEntity: any) {
     console.log(patientEntity);
-    return await this.manager.findOne(Patient, { email: patientEntity.email });
+    return await this.manager.findOne(User, { email: patientEntity.email });
   }
   compareHash = async (password: string, hash: string) => await bcrypt.compareSync(password, hash);
 }
-export default PatientRepository;
+export default UserRepository;

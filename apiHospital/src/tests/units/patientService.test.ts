@@ -1,8 +1,8 @@
-import PatientService from "../../modules/Patient/PatientService";
+import PatientService from "../../modules/User/UserService";
 import PatientRepositoryMock from "../mocks/patientRepository.mock";
 import { IMailerService } from "./../../libs/mailer";
-import { IPatientRepository  } from "../../modules/Patient/PatientRepository";
-import { Patient } from "../../modules/Patient/PatientEntity";
+import { IPatientRepository  } from "../../modules/User/UserRepository";
+import { Patient } from "../../modules/User/UserEntity";
 import { mailerService } from "../../libs";
 import { Any } from "typeorm";
 

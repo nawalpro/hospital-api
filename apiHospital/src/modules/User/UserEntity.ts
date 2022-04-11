@@ -2,7 +2,7 @@ import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, BaseEntity } from "t
 // import { Doctor } from
 
 @Entity()
-export class Patient extends BaseEntity {
+export class User extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: any;
 
@@ -20,6 +20,9 @@ export class Patient extends BaseEntity {
 
   @Column()
   password!: string;
+
+  @Column()
+  roles!: number;
 
 //   @OneToMany(() => Doctor, doctor => patient.doctor)
 //   patients: any;

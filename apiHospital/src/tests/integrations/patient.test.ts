@@ -3,7 +3,7 @@ import database from "../../config/database";
 import App from "../../config/server";
 import routes from "../../modules/index";
 import middlewares from "../../middlewares";
-import PatientDTO from "../../modules/Patient/PatientDto";
+import PatientDTO from "../../modules/User/UserDto";
 import supertest from "supertest";
 
 let server = new App(routes, middlewares);

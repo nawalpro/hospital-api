@@ -1,14 +1,14 @@
 import { Response, Request, NextFunction } from "express";
 import { Controller, Middleware, Get, Post, Put, Delete } from '@overnightjs/core'
 import JwtService from "../../libs/jwt";
-import { IPatientService } from './PatientService';
+import { IUserService } from './UserService';
 import { auth } from "../../middlewares";
 
-@Controller('patient')
-class PatientController {
+@Controller('user')
+class UserController {
     private patientService;
     private jwtService;
-    constructor(patientService: IPatientService, jwtService: JwtService) {
+    constructor(patientService: IUserService, jwtService: JwtService) {
         this.patientService = patientService;
         this.jwtService = jwtService;
     }
@@ -52,4 +52,4 @@ class PatientController {
     }
 }
 
-export default PatientController;
+export default UserController;
