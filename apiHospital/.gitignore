@@ -1,10 +1,10 @@
 .idea/
 .vscode/
 rest.http
-
+.DS_Store
 node_modules/
 build/
 tmp/
 temp/
 .env
-*.DS_Store
+*DS_Store
