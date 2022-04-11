@@ -2,9 +2,9 @@ POST http://localhost:4001/patient/
 Content-Type: application/json
 
 {
-         "firstname": "xz xz` ",
-         "lastname": "zx` ",
-         "email":"a@a.fr`",
+        "firstname": "xz xz` ",
+        "lastname": "zx` ",
+        "email":"a@a.fr`",
         "password":"sac",
         "phone":"077777877"
 }
