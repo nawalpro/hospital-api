@@ -1,5 +1,5 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, BaseEntity } from "typeorm";
-// import { Doctor } from
+import { Entity, PrimaryGeneratedColumn, Column,OneToMany, BaseEntity } from "typeorm";
+import { Role } from "../Role/RoleEntity"
 
 @Entity()
 export class User extends BaseEntity {
@@ -21,11 +21,12 @@ export class User extends BaseEntity {
   @Column()
   password!: string;
 
-  @Column()
-  roles!: number;
+  @OneToMany(() => Role, role => role.user)
+  roles: Role[];
 
-//   @OneToMany(() => Doctor, doctor => patient.doctor)
-//   patients: any;
+  // @OneToMany(() => Photo, photo => photo.user)
+  // photos: Photo[];
+
 }
 
 
