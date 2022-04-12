@@ -1,5 +1,5 @@
 import { EntityRepository, EntityManager } from "typeorm";
-import { Patient } from "./patientEntity"
+import { Patient } from "./PatientEntity"
 
 export interface IPatientRepository {
     findAll(): Promise<Patient[]>;
