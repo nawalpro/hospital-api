@@ -1,7 +1,6 @@
 import { EntityRepository, EntityManager } from "typeorm";
 import bcrypt from "bcrypt";
 import { User } from "./UserEntity";
-//importer l'entity Docteur ici
 
 export interface IUserRepository {
   findAll(): Promise<User[]>;

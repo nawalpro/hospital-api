@@ -3,7 +3,7 @@ import UserRepository from './UserRepository';
 import UserService from './UserService';
 import UserController from './UserController';
 import UserRouter from './UserRouter';
-import {jwtService, mailerService} from '../../libs';
+import { jwtService, mailerService } from '../../libs';
 
 const userRepository = getCustomRepository(UserRepository);
 const userService = new UserService(userRepository, mailerService);
