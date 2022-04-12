@@ -1,5 +1,4 @@
 import { Entity, PrimaryGeneratedColumn, Column,OneToMany, BaseEntity } from "typeorm";
-import { Role } from "../Role/RoleEntity"
 
 @Entity()
 export class User extends BaseEntity {
@@ -21,8 +20,23 @@ export class User extends BaseEntity {
   @Column()
   password!: string;
 
-  @OneToMany(() => Role, role => role.user)
-  roles: Role[];
+  @Column()
+  admin!: boolean;
+
+  @Column()
+  doctor!: boolean;
+
+  @Column()
+  verified!: boolean;
+
+  @Column()
+  token!: string;
+
+  @Column()
+  tokenExp!: Date;
+
+  @Column()
+  createdAt!: Date;
 
   // @OneToMany(() => Photo, photo => photo.user)
   // photos: Photo[];
