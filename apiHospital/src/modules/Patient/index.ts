@@ -1,8 +1,8 @@
 import {getCustomRepository} from "typeorm";
-import UserRepository from './PatientRepository';
-// import PatientService from './PatientService';
-// import PatientController from './PatientController';
-// import PatientRouter from './PatientRouter';
+import PatientRepository from './patientRepository';
+import PatientService from './patientService';
+import PatientController from './patientController';
+import PatientRouter from './patientRouter';
 import {jwtService} from '../../libs';
 
 const PatientRepository = getCustomRepository(PatientRepository);
