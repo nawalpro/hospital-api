@@ -9,7 +9,7 @@ Content-Type: application/json
         "phone":"077777877"
 }
 #############################################################################################################################
-POST http://localhost:3001/patient/auth
+POST http://localhost:4001/patient/auth
 Content-Type: application/json
 
 {
@@ -19,4 +19,4 @@ Content-Type: application/json
 
 
 #####
-GET http://localhost:3001/patient/
+GET http://localhost:4001/patient/

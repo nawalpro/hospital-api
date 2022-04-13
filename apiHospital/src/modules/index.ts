@@ -1,8 +1,9 @@
 // const ServiceRouter = require('./Service/ServiceRouter')
-import { userController } from './User';
 // const DoctorRouter = require('./Doctor/DoctorRouter')
+import { userController } from './User';
 
-const routes = [ userController
-                  ];
+const routes = [
+    userController
+];
 
-export default  routes;
+export default routes;
