@@ -4,22 +4,21 @@ import {
   Column,
   ManyToOne,
   BaseEntity,
-  ManyToMany,
+  ManyToMany
 } from "typeorm";
+import { Role } from "../Role/RoleEntity";
+import { User } from "../User/UserEntity";
 
 @Entity()
 export class Patient extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: any;
 
-  @Column()
-  UserId!: string;
-
-  @Column()
-  RolesId!: string;
-
-  @ManyToMany(() => 
-  // Document, document => 
-  )
+  @ManyToMany(() => Role,
+  role => role.id)
+  role!: Role[];
   
+  @ManyToMany(() => User,
+  user => user.id)
+  user!: User[];
 }

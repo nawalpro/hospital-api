@@ -12,20 +12,23 @@ import { IPatientService } from "./patientService";
 import { auth } from "../../middlewares";
 import { jwtService } from "../../libs";
 
-@Controller('user')
+@Controller("user")
 class PatientController {
-    private patientService;
-    private jwtService = jwtService;
-    constructor(patientService: IPatientService, JwtService: JwtService) {
-        this.patientService = patientService; 
-        this.jwtService = jwtService; 
+  private patientService;
+  private jwtService = jwtService;
+  constructor(patientService: IPatientService, JwtService: JwtService) {
+    this.patientService = patientService;
+    this.jwtService = jwtService;
+  }
+  @Get()
+  @Post()
+  @Middleware(auth.isAuth)
+  getAll = async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      let patients = await this.patientService.getAll();
+    } catch (err) {
+      next(err);
     }
-    @Post()
-    @Middleware(auth.isAuth)
-    requestingToTheAdmin = async (req: Request, res: Response, next: NextFunction) =>{
-
-        try {
-            // let patients = await this.patientService.takeAppointments();
-        }
-    }
+  };
 }
+export default PatientController;
