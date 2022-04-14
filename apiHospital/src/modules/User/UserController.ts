@@ -6,10 +6,10 @@ import { auth } from "../../middlewares";
 
 @Controller('users')
 class UserController {
-    private patientService;
+    private userService;
     private jwtService;
     constructor(patientService: IUserService, jwtService: JwtService) {
-        this.patientService = patientService;
+        this.userService = patientService;
         this.jwtService = jwtService;
     }
 
@@ -17,7 +17,7 @@ class UserController {
     @Middleware(auth.isAuth)
     getAll = async (req: Request, res: Response, next: NextFunction) => {
         try {
-            let users = await this.patientService.getAll();
+            let users = await this.userService.getAll();
             res.status(200).json(users);
         } catch (err) {
             next(err);
@@ -29,7 +29,7 @@ class UserController {
     register = async (req: Request, res: Response, next: NextFunction) => {
         try {
             console.log('toto', req.body);
-            const user = await this.patientService.register({...req.body});
+            const user = await this.userService.register({...req.body});
             res.status(201).json(user);
         }
         catch (err) {
@@ -39,10 +39,10 @@ class UserController {
         }
     }
 
-    @Post('login')
+    @Post('auth')
     login = async (req: Request, res: Response, next: NextFunction) => {
         try {
-            const user = await this.patientService.login({...req.body});
+            const user = await this.userService.login({...req.body});
             const token = await this.jwtService.generateToken({ id: user.id });
             res.cookie('auth-cookie', token, {expires: new Date(Date.now() + (30 * 86400 * 1000))});
             res.status(200).json(user);
