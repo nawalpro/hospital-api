@@ -4,7 +4,7 @@ import JwtService from "../../libs/jwt";
 import { IUserService } from './UserService';
 import { auth } from "../../middlewares";
 
-@Controller('user')
+@Controller('users')
 class UserController {
     private patientService;
     private jwtService;
@@ -21,6 +21,7 @@ class UserController {
             res.status(200).json(users);
         } catch (err) {
             next(err);
+            console.log(err);
         }
     }
 
@@ -47,6 +48,7 @@ class UserController {
             res.status(200).json(user);
         } catch (err) {
             next(err);
+            console.log(err, "err login");
         }
 
     }

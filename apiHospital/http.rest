@@ -1,4 +1,4 @@
-POST http://localhost:4001/patient/
+POST http://localhost:4001/users/
 Content-Type: application/json
 
 {
@@ -9,7 +9,7 @@ Content-Type: application/json
         "phone":"077777877"
 }
 #############################################################################################################################
-POST http://localhost:4001/patient/auth
+POST http://localhost:4001/users/auth
 Content-Type: application/json
 
 {
@@ -19,4 +19,6 @@ Content-Type: application/json
 
 
 #####
-GET http://localhost:4001/patient/
+GET http://localhost:4001/users/
+######
+GET http://localhost:4000/users/
