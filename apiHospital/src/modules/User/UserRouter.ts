@@ -1,15 +1,13 @@
 import { Router } from "express";
-import UserController from "./UserController"
+import { auth } from "../../middlewares";
+import UserController from "./UserController";
 
 export default ((controller: UserController) => {
-    const patientRouter = Router();
-    const entrypoint = '/patient/';
-    patientRouter
-        .route(`${entrypoint}`)
-        .get( controller.getAll)
-        .post(controller.register);
+    const userRouter = Router();
+    userRouter.route('/').get(auth.isAuth, controller.getAll);
+    userRouter.route('/').post(controller.register);
 
-    patientRouter.route(`auth/`).post(controller.login);
+    userRouter.route(`auth/`).post(controller.login);
 
-    return patientRouter;
+    return userRouter;
 });
