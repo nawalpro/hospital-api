@@ -1,4 +1,3 @@
-import { Router } from "express";
 import DoctorController from "./DoctorController"
 
 export default ((controller: DoctorController) => {
