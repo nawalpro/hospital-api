@@ -1,56 +1,56 @@
-// import PatientService from "../../modules/User/UserService";
-// import PatientRepositoryMock from "../mocks/patientRepository.mock";
-// import { IMailerService } from "./../../libs/mailer";
-// import { IPatientRepository  } from "../../modules/User/UserRepository";
-// import { Patient } from "../../modules/User/UserEntity";
-// import { mailerService } from "../../libs";
-// import { Any } from "typeorm";
+import UserService from "../../modules/User/UserService";
+import UserRepositoryMock from "../mocks/UserRepository.mock";
+import { IMailerService } from "./../../libs/mailer";
+import { IUserRepository  } from "../../modules/User/UserRepository";
+import { User } from "../../modules/User/UserEntity";
+import { mailerService } from "../../libs";
+import { Any } from "typeorm";
 
 
-// const patientService = new PatientService( new PatientRepositoryMock(), mailerService);
+const userService = new UserService( new UserRepositoryMock(), mailerService);
 
-// describe("Patient service USE-CASE : ", () => {
+describe("User service USE-CASE : ", () => {
   
-//   describe("add patient use case : ", () => {
+  describe("add User use case : ", () => {
    
-//     it("Should throw an error if patientData is empty or null", async () => {
-//       try {
-//         await patientService.register({
-//           firstname: "",
-//           lastname: "",
-//           email: "",
-//           password: "",
-//           phone: 12345632112
-//         });
-//       } catch (e:any) {
+    it("Should throw an error if UserData is empty or null", async () => {
+      try {
+        await userService.register({
+          firstname: "",
+          lastname: "",
+          email: "",
+          password: "",
+          phone: 12345632112
+        });
+      } catch (e:any) {
         
-//         expect(e.statusCode).toBe(400);
-//         expect(e.message).toBe("Missing required fields");
-//       }
-//     })
+        expect(e.statusCode).toBe(400);
+        expect(e.message).toBe("Missing required fields");
+      }
+    })
 
-    // it('Should throw an error if patientdata is empty or null', async () => {
-    // 	const patient = await patientService.add({ firstname: "Brigitte", lastname: "Lolekunda", email: "Lolekunda", password: "klkdeljf23"});
+    // it('Should throw an error if Userdata is empty or null', async () => {
+    // 	const User = await userService.add({ firstname: "Brigitte", lastname: "Lolekunda", email: "Lolekunda", password: "klkdeljf23"});
 
-    // 	expect(patient.firstname).toBe("Brigitte");
-    // 	expect(patient.lastname).toBe("Lolenkunda");
-    // 	expect(patient.email).toBe("Brigitte");
-    // 	expect(patient.password).toBe("klkdeljf23");
+    // 	expect(User.firstname).toBe("Brigitte");
+    // 	expect(User.lastname).toBe("Lolenkunda");
+    // 	expect(User.email).toBe("Brigitte");
+    // 	expect(User.password).toBe("klkdeljf23");
 
-    // 	expect(patient instanceof Patient).toBe(true);
+    // 	expect(User instanceof User).toBe(true);
 
     // })
 
-    // it('Should return an array of Patient instance', async () => {
+    // it('Should return an array of User instance', async () => {
 
-    // 	const patients = await patientService.getAll();
+    // 	const Users = await UserService.getAll();
 
-    // 	expect(patients[0] instanceof Patient).toBe(true);
+    // 	expect(Users[0] instanceof User).toBe(true);
 
-    // 	expect(patients[0].firstname).toBe("Brigitte")
-    // 	expect(patients[0].lastname).toBe("Lolekunda")
-    // 	expect(patients[0].email).toBe("bLol@gmail.com")
-    // 	expect(patients[0].password).toBe("klkdeljf23")
+    // 	expect(Users[0].firstname).toBe("Brigitte")
+    // 	expect(Users[0].lastname).toBe("Lolekunda")
+    // 	expect(Users[0].email).toBe("bLol@gmail.com")
+    // 	expect(Users[0].password).toBe("klkdeljf23")
     // })
-//   })
-// })
+  })
+})

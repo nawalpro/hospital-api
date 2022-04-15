@@ -21,7 +21,7 @@ afterAll(async () => {
 
 describe("GET /users", () => {
   it("Should return a 200 http status code", async () => {
-    const res = await await request(server.app)
+    const res = await request(server.app)
       .get("/patient")
       .set("auth-cookie", `token ${token}`);
     expect(res.statusCode).toEqual(200);
