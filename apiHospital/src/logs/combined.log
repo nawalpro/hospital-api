@@ -173,3 +173,16 @@
 {"level":"info","message":"::ffff:127.0.0.1 - - [14/Apr/2022:10:02:18 +0000] \"POST /users/ HTTP/1.1\" 500 73 \"-\" \"vscode-restclient\"\n"}
 {"level":"info","message":"::ffff:127.0.0.1 - - [14/Apr/2022:10:07:04 +0000] \"POST /users/auth HTTP/1.1\" 400 76 \"-\" \"vscode-restclient\"\n"}
 {"level":"info","message":"::ffff:127.0.0.1 - - [14/Apr/2022:10:07:10 +0000] \"POST /users/auth HTTP/1.1\" 400 76 \"-\" \"vscode-restclient\"\n"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [15/Apr/2022:10:49:13 +0000] \"GET /users/ HTTP/1.1\" 401 37 \"-\" \"vscode-restclient\"\n"}
+{"level":"error"}
+{"level":"error"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [15/Apr/2022:19:37:09 +0000] \"POST /users/ HTTP/1.1\" 400 54 \"-\" \"vscode-restclient\"\n"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [15/Apr/2022:19:46:40 +0000] \"POST /users/ HTTP/1.1\" 400 54 \"-\" \"vscode-restclient\"\n"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [15/Apr/2022:19:48:33 +0000] \"POST /users/ HTTP/1.1\" 201 257 \"-\" \"vscode-restclient\"\n"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [15/Apr/2022:19:51:48 +0000] \"POST /users/ HTTP/1.1\" 201 256 \"-\" \"vscode-restclient\"\n"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [15/Apr/2022:19:54:55 +0000] \"POST /users/ HTTP/1.1\" 201 256 \"-\" \"vscode-restclient\"\n"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [15/Apr/2022:19:55:29 +0000] \"POST /users/ HTTP/1.1\" 201 253 \"-\" \"vscode-restclient\"\n"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [15/Apr/2022:19:55:46 +0000] \"POST /users/ HTTP/1.1\" 201 253 \"-\" \"vscode-restclient\"\n"}

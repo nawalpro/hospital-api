@@ -1,4 +1,4 @@
-import {IDoctorRepository} from './DoctorRepository';
+import {IDoctorRepository} from './PractitionerRepository';
 import  userRepo from '../User/UserRepository';
 import { IUserRepository } from '../User/UserRepository';
 import { IMailerService } from '../../libs/mailer';
