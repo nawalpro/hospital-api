@@ -1,8 +1,13 @@
 import RoutePath from './routes/index';
 import React from 'react'
+import { Provider } from 'react-redux';
+import { store } from './state';
+
 function App() {
   return ( 
-    <RoutePath/>
+    <Provider store={store}>
+      <RoutePath/>
+    </Provider>
   )
 }
 

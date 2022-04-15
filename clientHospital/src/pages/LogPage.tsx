@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Form from '../components/logs/form'
 
 
 interface userregister {
@@ -12,16 +12,16 @@ interface userregister {
     error?: string;
 };
 
-const RegisterPage = () => {
+const LogPage = () => {
 
     return (
         <div>
-            
+			in progress
         </div>
     )
 }
 
-export default RegisterPage
+export default LogPage;
 
 
 

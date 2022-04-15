@@ -13,7 +13,7 @@ type FormProps = {
 	credentials: CredentialsType;
 };
 
-const form = (props: FormProps) => {
+const Form = (props: FormProps) => {
     let navigate = useNavigate();
 
     const handleSubmit = (e: React.SyntheticEvent) => {
@@ -38,4 +38,4 @@ const form = (props: FormProps) => {
     )
 }
 
-export default form
+export default Form
