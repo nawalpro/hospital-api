@@ -7,6 +7,7 @@ import {
 	Typography,
 	TextField,
 	Button,
+	Box,
 } from "@material-ui/core";
 import { error } from "console";
 
@@ -32,7 +33,7 @@ interface Usersignup {
 };
 
 const SignUpPages: React.FC<Usersignup> = () => {
-	const { heading, submitButton } = useStyles();
+	const { heading, submitButton, root } = useStyles();
 
 
 
@@ -79,7 +80,7 @@ const SignUpPages: React.FC<Usersignup> = () => {
 	};
 
 	return (
-		<>
+		<Box className={root}>
 			<Typography className={heading} variant="h2">Bienvenue sur hospital </Typography>
 			<Container maxWidth="xs">
 				<Typography className={heading} variant="h3">S'inscrire</Typography>
@@ -194,7 +195,7 @@ const SignUpPages: React.FC<Usersignup> = () => {
 					</form>
 				</section>
 			</Container>
-		</>
+		</Box>
 	);
 };
 

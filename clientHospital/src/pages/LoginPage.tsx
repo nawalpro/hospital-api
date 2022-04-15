@@ -14,6 +14,7 @@ const useStyles = makeStyles({
   root: {
     border: 0,
     textAlign: "center",
+    marginTop: "10%",
   },
   fieldStyle: {
     marginBottom: "30px",

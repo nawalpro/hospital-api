@@ -13,7 +13,7 @@ function index() {
           <Header/>
 
       <Routes>
-        <Route path="/login" element={<LoginPage />} />
+        <Route path="/login" element={<LoginPage/>} />
         <Route path="/signup" element={<SignUpPages />} />
         <Route path="/" element={<Home />} />
         <Route path="/profil" element={<DashboardPage />} />

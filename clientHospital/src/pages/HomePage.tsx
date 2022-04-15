@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Container, AppBar, Toolbar, Typography, Button, Grid, Grow } from '@material-ui/core';
 import weCare from '../images/weCareBlue.png';
 import Login from '../components/logs/login';
+import Map from '../components/map/map';
 
 
 export default function HomePage() {
@@ -10,8 +11,10 @@ export default function HomePage() {
         <Container maxWidth="lg">
       <AppBar position="static">
         <Typography variant="h2" align='center'>We-Care</Typography>
-        <img src={weCare} alt="weCare" height='60' />
+        <img src={weCare} alt="weCare" height='7' />
       </AppBar>
+        < Map />
+
       <Grow in >
         <Container>
           <Grid container justify= 'space-between' alignItems='stretch' spacing={4} >
@@ -21,6 +24,8 @@ export default function HomePage() {
                 </Typography>
               </Grid>
               <Grid item xs={12} sm={4}>
+                  {/* <Login /> */}
+                  {/* <Login /> */}
               </Grid>
           </Grid>
         </Container>
