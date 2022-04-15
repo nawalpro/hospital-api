@@ -1,13 +1,13 @@
 import RoutePath from './routes/index';
-import React from 'react';
-import { Container, AppBar, Toolbar, Typography, Button, Grid, Grow } from '@material-ui/core';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-@types/leaflet';
-function App() {
-  return (
-    <Container maxWidth="lg">
-      <RoutePath />
+import React from 'react'
+import { Provider } from 'react-redux';
+import { store } from './state';
 
-    </Container>
+function App() {
+  return ( 
+    <Provider store={store}>
+      <RoutePath/>
+    </Provider>
   )
 }
 

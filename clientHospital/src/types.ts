@@ -2,6 +2,7 @@ export type CredentialsType = {
     password: string;
     email: string;
     firstname?: string;
+    credentials?: string;
 }; 
 
 export type ToggleFormType = {
