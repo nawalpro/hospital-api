@@ -1,12 +1,13 @@
 import { Router } from "express";
-import PatientController from "./PatientController";
+import PatientController from "./patientController";
 
 export default ((controller: PatientController) => {
   const patientRouter = Router();
-  const entrypoint = "/userPatient/";
-
+  const entrypoint = "/usersPatient/";
+  //auth
   patientRouter
     .route(`${entrypoint}`)
+    // .post(controller.takeAppointments)
     .get(controller.getAll);
   return patientRouter;
 });
