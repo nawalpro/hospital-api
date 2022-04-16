@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Container, AppBar, Toolbar, Typography, Button, Grid, Grow } from '@material-ui/core';
 import weCare from '../images/weCareBlue.png';
 import Login from '../components/logs/login';
-import Map from '../components/map/map';
+import  LeafletMap from '../components/map/map';
 
 
 export default function HomePage() {
@@ -13,7 +13,7 @@ export default function HomePage() {
         <Typography variant="h2" align='center'>We-Care</Typography>
         <img src={weCare} alt="weCare" height='7' />
       </AppBar>
-        < Map />
+        < LeafletMap />
 
       <Grow in >
         <Container>
