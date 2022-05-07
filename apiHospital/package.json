@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rimraf dist",
     "start": "nodemon ./src/app.ts",
-    "watch:build": "tsc --watch",
+    "build": "tsc",
     "watch:server": "nodemon './dist/app.js' --watch './dist'",
     "test": "jest",
     "test:dev": "jest --watchAll"

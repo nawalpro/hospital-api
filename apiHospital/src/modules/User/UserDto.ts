@@ -4,17 +4,24 @@ class UserDTO {
     public id;
     public firstname;
     public lastname;
-    public password;
     public phone;
     public email;
+    public password;
+    public admin;
+    public practitioner;
+    public patient;
+
     
-    constructor({id, firstname,lastname, password, phone, email } : {id: number, firstname: string, lastname: string, password: string, phone: number, email: string}) {
+    constructor({id, firstname,lastname, phone, email, password, admin, practitioner, patient } : {id: string, firstname: string, lastname: string, phone: number, email: string, password: string, admin: boolean, practitioner: boolean, patient: boolean }) {
         this.id = id;
         this.firstname = firstname;
         this.lastname = lastname;
-        this.password = password;
         this.phone = phone;
         this.email = email;
+        this.password = password;
+        this.admin = admin;
+        this.practitioner = practitioner;
+        this.patient = patient;
     }
 
 }

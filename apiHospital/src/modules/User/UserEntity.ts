@@ -1,9 +1,10 @@
-import { Entity, PrimaryGeneratedColumn, Column,OneToMany, BaseEntity } from "typeorm";
+import { Entity, PrimaryColumn, Column, BaseEntity, Generated, CreateDateColumn } from "typeorm";
 
 @Entity()
 export class User extends BaseEntity {
-  @PrimaryGeneratedColumn()
-  id: any;
+  @PrimaryColumn()
+  @Generated('uuid')
+  id: string;
 
   @Column()
   firstname!: string;
@@ -20,26 +21,17 @@ export class User extends BaseEntity {
   @Column()
   password!: string;
 
-  @Column()
+  @Column('boolean', {default: false})
   admin!: boolean;
 
-  @Column()
-  doctor!: boolean;
+  @Column('boolean', {default: false})
+  practitioner!: boolean;
+  
+  @Column('boolean', {default: false})
+  patient!: boolean;
 
-  @Column()
-  verified!: boolean;
-
-  @Column()
-  token!: string;
-
-  @Column()
-  tokenExp!: Date;
-
-  @Column()
+  @CreateDateColumn()
   createdAt!: Date;
-
-  // @OneToMany(() => Photo, photo => photo.user)
-  // photos: Photo[];
 
 }
 
