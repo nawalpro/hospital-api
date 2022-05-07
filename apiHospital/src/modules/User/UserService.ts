@@ -32,8 +32,7 @@ export default class UserService implements IUserService {
     const users = await this.userRepo.findAll();
     return users.map((user: any) => new UserDTO(user));
   }
-
-
+  
   async register(userData:userType) {
     if (
       !userData.firstname ||
@@ -43,8 +42,26 @@ export default class UserService implements IUserService {
       !userData.password
     )
       throw new ApiError(400, "Missing required fields");
+    
+    const user = await this.userRepo.checkIfUserExist(userData);
+    
+    const regexEmail = /^([a-z A-Z 0-9](\.)?)+@\w+\.(\w){2,4}$/;
+    
+    const regexPassword = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@()$%^&*=_{}[\]:;\"'|\\<>,.\/~`±§+-]).{8,50}$/
 
+    if(!regexEmail.test(userData.email))
+     throw new ApiError(422, "Please enter a valid email address")
+     console.log("REGEX EMAIL", regexEmail.test(userData.email));
+
+    if(!regexPassword.test(userData.password))
+      throw new ApiError(422, "Password must be between 8 and 50 characters, include at least one number, symbol, uppercase and lowercase letter")
+    
+    if(user)
+      // console.log("USEEER",user);
+      throw new ApiError(409, "User already exist")
+    
     const newUser = await this.userRepo.addNew(userData);
+
     await this.mailerService.sendMail(userData);
     return new UserDTO(newUser);
   }
