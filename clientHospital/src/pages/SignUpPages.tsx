@@ -25,15 +25,14 @@ interface Usersignup {
 	email?: string;
 	password?: string;
 	phone?: string;
-	// adress?: string;
+	adress?: string;
 	lastname?: string;
 	firstname?: string;
-	// confirmPassword: string;
-	// acceptTerms: boolean;
+	
 };
 
 const SignUpPages: React.FC<Usersignup> = () => {
-	const { heading, submitButton, root } = useStyles();
+	const { heading, submitButton } = useStyles();
 
 
 
@@ -43,6 +42,8 @@ const SignUpPages: React.FC<Usersignup> = () => {
 		email: '',
 		phone: '',
 		password: '',
+		adress:'',
+		
 	});
 
 	const [error, setError] = useState('');

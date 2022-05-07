@@ -9,11 +9,11 @@ import  LeafletMap from '../components/map/map';
 export default function HomePage() {
     return (
         <Container maxWidth="lg">
-      <AppBar position="static">
-        <Typography variant="h2" align='center'>We-Care</Typography>
-        <img src={weCare} alt="weCare" height='7' />
-      </AppBar>
-        < LeafletMap />
+      {/* <AppBar position="static"> */}
+        {/* <Typography variant="h2" align='center'>We-Care</Typography> */}
+        {/* <img src={weCare} alt="weCare" height='7' /> */}
+      {/* </AppBar> */}
+        // < LeafletMap />
 
       <Grow in >
         <Container>

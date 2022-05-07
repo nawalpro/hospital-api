@@ -7,10 +7,10 @@ class App extends Server {
 
     constructor(routes: Array<Object>, middlewares: Object) {
         super();
-
         this.initializeMiddlewares(middlewares);
         super.addControllers(routes);
         this.initializeErrorHandler();
+        
     }
 
     initializeMiddlewares(middlewares: any) {

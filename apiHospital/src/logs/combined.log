@@ -186,3 +186,4 @@
 {"level":"info","message":"::ffff:127.0.0.1 - - [15/Apr/2022:19:54:55 +0000] \"POST /users/ HTTP/1.1\" 201 256 \"-\" \"vscode-restclient\"\n"}
 {"level":"info","message":"::ffff:127.0.0.1 - - [15/Apr/2022:19:55:29 +0000] \"POST /users/ HTTP/1.1\" 201 253 \"-\" \"vscode-restclient\"\n"}
 {"level":"info","message":"::ffff:127.0.0.1 - - [15/Apr/2022:19:55:46 +0000] \"POST /users/ HTTP/1.1\" 201 253 \"-\" \"vscode-restclient\"\n"}
+{"level":"error"}

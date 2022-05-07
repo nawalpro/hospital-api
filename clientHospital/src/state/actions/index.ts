@@ -5,9 +5,8 @@ export type Direction = 'up' | 'down';
 
 export interface setCredentials {
     type: ActionType.SET_CREDENTIALS;
-    payload: {
-        credentials: CredentialsType;
-    };
+    payload: string;
+    
 }
 
 export interface MoveCellAction {
@@ -43,4 +42,5 @@ export type Action =
   | MoveCellAction
   | DeleteCellAction
   | InsertCellAfterAction
+  | setCredentials
   | UpdateCellAction;

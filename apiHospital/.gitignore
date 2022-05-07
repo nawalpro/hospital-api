@@ -10,3 +10,7 @@ temp/
 *DS_Store
 *.http
 *.log
+*./logs
+*logs
+*logs/*
+*logs/*.log
