@@ -13,7 +13,7 @@ class UserController {
         this.jwtService = jwtService;
     }
 
-    @Get()
+    @Get('all')
     @Middleware(auth.isAuth)
     getAll = async (req: Request, res: Response, next: NextFunction) => {
         try {

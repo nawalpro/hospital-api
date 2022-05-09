@@ -285,3 +285,43 @@
 {"level":"info","message":"::ffff:127.0.0.1 - - [18/Apr/2022:11:57:44 +0000] \"POST /users/ HTTP/1.1\" 409 49 \"-\" \"vscode-restclient\"\n"}
 {"level":"info","message":"::ffff:127.0.0.1 - - [18/Apr/2022:11:57:59 +0000] \"POST /users/ HTTP/1.1\" 201 250 \"-\" \"vscode-restclient\"\n"}
 {"level":"info","message":"::ffff:127.0.0.1 - - [18/Apr/2022:11:58:04 +0000] \"POST /users/ HTTP/1.1\" 409 49 \"-\" \"vscode-restclient\"\n"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [09/May/2022:08:13:51 +0000] \"POST /users/ HTTP/1.1\" 201 251 \"-\" \"vscode-restclient\"\n"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [09/May/2022:08:16:17 +0000] \"POST /users/users/auth HTTP/1.1\" 404 156 \"-\" \"vscode-restclient\"\n"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [09/May/2022:12:51:19 +0000] \"POST /users/ HTTP/1.1\" 409 49 \"-\" \"vscode-restclient\"\n"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [09/May/2022:12:51:38 +0000] \"POST /users/users/auth HTTP/1.1\" 404 156 \"-\" \"vscode-restclient\"\n"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [09/May/2022:12:52:39 +0000] \"POST /users/auth HTTP/1.1\" 200 248 \"-\" \"vscode-restclient\"\n"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [09/May/2022:12:55:43 +0000] \"GET /users/all HTTP/1.1\" 200 169 \"-\" \"vscode-restclient\"\n"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [09/May/2022:12:56:14 +0000] \"GET /users/all HTTP/1.1\" 200 169 \"-\" \"vscode-restclient\"\n"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [09/May/2022:12:56:32 +0000] \"GET /users/all HTTP/1.1\" 200 169 \"-\" \"vscode-restclient\"\n"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [09/May/2022:12:58:19 +0000] \"GET /users/all HTTP/1.1\" 200 169 \"-\" \"vscode-restclient\"\n"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [09/May/2022:12:58:37 +0000] \"GET /users/all HTTP/1.1\" 200 169 \"-\" \"vscode-restclient\"\n"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [09/May/2022:13:00:06 +0000] \"POST /users/auth HTTP/1.1\" 400 76 \"-\" \"vscode-restclient\"\n"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [09/May/2022:13:00:14 +0000] \"POST /users/auth HTTP/1.1\" 400 76 \"-\" \"vscode-restclient\"\n"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [09/May/2022:13:00:17 +0000] \"GET /users/all HTTP/1.1\" 200 169 \"-\" \"vscode-restclient\"\n"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [09/May/2022:13:00:34 +0000] \"POST /users/ HTTP/1.1\" 201 260 \"-\" \"vscode-restclient\"\n"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [09/May/2022:13:01:04 +0000] \"GET /users/all HTTP/1.1\" 200 427 \"-\" \"vscode-restclient\"\n"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [09/May/2022:13:01:28 +0000] \"GET /users/all HTTP/1.1\" 200 427 \"-\" \"vscode-restclient\"\n"}
+{"level":"info","message":"::1 - - [09/May/2022:13:02:18 +0000] \"POST /users/auth HTTP/1.1\" 400 76 \"-\" \"PostmanRuntime/7.28.4\"\n"}
+{"level":"info","message":"::1 - - [09/May/2022:13:02:38 +0000] \"POST /users/auth HTTP/1.1\" 400 76 \"-\" \"PostmanRuntime/7.28.4\"\n"}
+{"level":"info","message":"::1 - - [09/May/2022:13:02:42 +0000] \"POST /users/auth HTTP/1.1\" 400 76 \"-\" \"PostmanRuntime/7.28.4\"\n"}
+{"level":"info","message":"::1 - - [09/May/2022:13:02:43 +0000] \"POST /users/auth HTTP/1.1\" 400 76 \"-\" \"PostmanRuntime/7.28.4\"\n"}
+{"level":"info","message":"::1 - - [09/May/2022:13:03:06 +0000] \"POST /users/auth HTTP/1.1\" 400 76 \"-\" \"PostmanRuntime/7.28.4\"\n"}
+{"level":"info","message":"::1 - - [09/May/2022:13:03:07 +0000] \"POST /users/auth HTTP/1.1\" 400 76 \"-\" \"PostmanRuntime/7.28.4\"\n"}
+{"level":"info","message":"::1 - - [09/May/2022:13:03:19 +0000] \"POST /users/auth HTTP/1.1\" 400 76 \"-\" \"PostmanRuntime/7.28.4\"\n"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [09/May/2022:13:03:46 +0000] \"POST /users/ HTTP/1.1\" 201 251 \"-\" \"vscode-restclient\"\n"}
+{"level":"info","message":"::1 - - [09/May/2022:13:03:53 +0000] \"POST /users/auth HTTP/1.1\" 200 248 \"-\" \"PostmanRuntime/7.28.4\"\n"}
+{"level":"info","message":"::1 - - [09/May/2022:13:04:17 +0000] \"GET /users/all HTTP/1.1\" 200 676 \"-\" \"PostmanRuntime/7.28.4\"\n"}
+{"level":"info","message":"::1 - - [09/May/2022:13:05:06 +0000] \"GET /users/all HTTP/1.1\" 200 676 \"-\" \"PostmanRuntime/7.28.4\"\n"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [09/May/2022:13:08:30 +0000] \"GET /users/all HTTP/1.1\" 200 676 \"-\" \"vscode-restclient\"\n"}
+{"level":"info","message":"::1 - - [09/May/2022:13:09:24 +0000] \"GET / HTTP/1.1\" 404 139 \"-\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36\"\n"}
+{"level":"info","message":"::1 - - [09/May/2022:13:09:33 +0000] \"GET /users HTTP/1.1\" 404 144 \"-\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36\"\n"}
+{"level":"info","message":"::1 - - [09/May/2022:13:09:44 +0000] \"GET /users/all HTTP/1.1\" 401 37 \"-\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36\"\n"}
+{"level":"info","message":"::1 - - [09/May/2022:13:09:44 +0000] \"GET /favicon.ico HTTP/1.1\" 404 150 \"http://localhost:4000/users/all\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36\"\n"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [09/May/2022:13:10:32 +0000] \"GET /users/all HTTP/1.1\" 200 676 \"-\" \"vscode-restclient\"\n"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [09/May/2022:13:12:33 +0000] \"GET /users/all HTTP/1.1\" 200 676 \"-\" \"vscode-restclient\"\n"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [09/May/2022:13:13:01 +0000] \"POST /users/auth HTTP/1.1\" 200 248 \"-\" \"vscode-restclient\"\n"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [09/May/2022:13:13:30 +0000] \"GET /users/all HTTP/1.1\" 200 676 \"-\" \"vscode-restclient\"\n"}
