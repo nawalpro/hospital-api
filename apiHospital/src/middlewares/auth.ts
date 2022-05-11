@@ -10,6 +10,7 @@ class AuthMiddleware {
 
     isAuth = async (req: Request | any, res: Response, next: NextFunction) => {
         try {
+            console.log('req.cookies', req.cookies);
             const token = req.cookies['auth-cookie'];
 
             if (!token) {

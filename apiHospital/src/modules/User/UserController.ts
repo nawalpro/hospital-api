@@ -13,7 +13,7 @@ class UserController {
         this.jwtService = jwtService;
     }
 
-    @Get()
+    @Get('all')
     @Middleware(auth.isAuth)
     getAll = async (req: Request, res: Response, next: NextFunction) => {
         try {
@@ -43,7 +43,7 @@ class UserController {
     login = async (req: Request, res: Response, next: NextFunction) => {
         try {
             const user = await this.userService.login({...req.body});
-            const token = await this.jwtService.generateToken({ id: user.id });
+            const token = await this.jwtService.generateToken({ id: user.id, expireIn: '1h' });
             res.cookie('auth-cookie', token, {expires: new Date(Date.now() + (30 * 86400 * 1000))});
             res.status(200).json(user);
         } catch (err) {

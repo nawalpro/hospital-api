@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { CredentialsType } from '../../types';
+import { CredentialsType } from '../../types/types';
 
 
 const register : React.FC = () => {

@@ -1,7 +1,7 @@
 import {useState, useMemo} from 'react';
 import { Link } from 'react-router-dom';
 /// type of component's Title 
-import { ToggleFormType } from '../../types';
+import { ToggleFormType } from '../../types/types';
 
 function ToggleForm(props: ToggleFormType) {
     const [ path, setPath ] = useState<string>('register');
