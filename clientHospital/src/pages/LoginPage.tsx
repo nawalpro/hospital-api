@@ -11,9 +11,19 @@ import { TextField, Button, makeStyles, Typography } from "@material-ui/core";
 // };
 
 const useStyles = makeStyles({
+  all: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    width: "100%",
+    height: "100vh",
+  },
   root: {
     border: 0,
     textAlign: "center",
+    margin: "0 auto",
+    width: "100%",
   },
   fieldStyle: {
     marginBottom: "30px",
@@ -53,7 +63,7 @@ function LoginPage() {
   };
 
   return (
-    <section className={classes.root}>
+    <section className={classes.all}>
       <Typography variant="h4">Se connecter</Typography>
 
       <form action="POST" className={classes.root} onSubmit={handleSubmit}>

@@ -2,7 +2,7 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { CredentialsType } from "../../types";
+import { CredentialsType } from "../../types/types";
 import ToggleForm from "./ToggleForm";
 
 type FormProps = {
