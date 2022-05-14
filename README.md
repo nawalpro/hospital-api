@@ -40,11 +40,11 @@
 
 ## Contributors
 
--<spam>Nawel Maizate</spam> [<img alt="githb link" width="30px" src="./img/Octocat.jpg"/>][nawal] 
+- <spam>Nawel Maizate</spam> [<img alt="githb link" width="30px" src="https://octodex.github.com/images/visionary.jpg"/>][nawal] 
 
--<spam>Jérôme Eliezer</spam> [<img alt="githb link" width="30px" src="./img/Octocat.jpg"/>][jérôme] 
+- <spam>Jérome Eliezer</spam>[<img alt="githb link" width="70px" src="https://octodex.github.com/images/red-polo.png"/>][jérôme]
 
--<spam>Kanu Rebecca</spam> [<img alt="githb link" width="30px" src="./img/Octocat.jpg"/>][rebecca]
+- <spam>Kanu Rebecca</spam> [<img alt="githb link" width="80px" src="https://octodex.github.com/images/boxertocat_octodex.jpg"/>][rebecca]
 
 <br />
 <br />
