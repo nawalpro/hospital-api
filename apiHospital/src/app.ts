@@ -15,3 +15,4 @@ const application = new App(routes, middlewares);
         logger.log(500, e.message);
     }
 })()
+

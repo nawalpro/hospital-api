@@ -40,11 +40,11 @@
 
 ## Contributors
 
--<spam>Nawel Maizate</spam> [<img alt="githb link" width="30px" src="./img/Octocat.jpg"/>][nawal] 
+- <spam>Nawel Maizate</spam> [<img alt="githb link" width="30px" src="./img/Octocat.jpg"/>][nawal] 
 
--<spam>Jérôme Eliezer</spam> [<img alt="githb link" width="30px" src="./img/Octocat.jpg"/>][jérôme] 
+- <spam>Jérôme Eliezer</spam> [<img alt="githb link" width="30px" src="./img/Octocat.jpg"/>][jérôme] 
 
--<spam>Kanu Rebecca</spam> [<img alt="githb link" width="30px" src="./img/Octocat.jpg"/>][rebecca]
+- <spam>Kanu Rebecca</spam> [<img alt="githb link" width="30px" src="./img/Octocat.jpg"/>][rebecca]
 
 <br />
 <br />

@@ -21,8 +21,7 @@ class UserRepository implements IUserRepository {
     return await this.manager.save(User, userEntity);
   }
 
-  async checkIfUserExist(userEntity: any)
-  {
+  async checkIfUserExist(userEntity: any){
     return await this.manager.findOne(User, { email: userEntity.email });
   }
 
