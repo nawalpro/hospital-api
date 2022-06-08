@@ -1,0 +1,22 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+       runOptions:'commands'
+       commands:|
+        docker-compose up --build --force-recreate frontend </dev/null &>/dev/null &
+       readyTimeout:'20000'
+       displayName:'docker-compose up'
