@@ -20,7 +20,7 @@ afterAll(async () => {
 });
 
 describe("POST /users/", () => {
-  it("Should return a 422 http status code and return message password error!!!!!", async () => {
+  it("Should return a 422 http status code and return  password message error!!!!!", async () => {
     const res = await request(server.app)
       .post("/user")
       .send({
