@@ -1,5 +1,5 @@
 import { User } from '../modules/User/UserEntity';
-import { userType } from '../modules/User/UserService';
+import { userType } from '../modules/User/userService';
 
 export interface IMailerService {
     sendMail(user: userType) : Promise<void>

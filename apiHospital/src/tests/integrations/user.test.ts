@@ -22,7 +22,7 @@ afterAll(async () => {
 describe("POST /patient", () => {
   it("Should return a 201 http status code and return the specified data!!!!!", async () => {
     const res = await request(server.app)
-      .post("/patient")
+      .post("/user")
       .send({
         email: "toto@test.fr",
         password: "1234",
@@ -32,7 +32,7 @@ describe("POST /patient", () => {
 });
 
 
-describe("POST /patient/auth", () => {
+describe("POST /user/auth", () => {
   it("Should return a 200 http status code", async () => {
     const res = await request(server.app)
     .post("/patient/auth")
@@ -42,7 +42,7 @@ describe("POST /patient/auth", () => {
   });
 });
 
-describe("GET /patient", () => {
+describe("GET /user", () => {
   it("Should return a 200 http status code", async () => {
     const res = await (await request(server.app)
       .get("/patient")

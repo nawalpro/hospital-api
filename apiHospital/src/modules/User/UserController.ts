@@ -1,7 +1,7 @@
 import { Response, Request, NextFunction } from "express";
 import { Controller, Middleware, Get, Post, Put, Delete } from '@overnightjs/core'
 import JwtService from "../../libs/jwt";
-import { IUserService } from './UserService';
+import { IUserService } from './userService';
 import { auth } from "../../middlewares";
 
 @Controller('users')
@@ -13,7 +13,7 @@ class UserController {
         this.jwtService = jwtService;
     }
 
-    @Get('all')
+    @Get()
     @Middleware(auth.isAuth)
     getAll = async (req: Request, res: Response, next: NextFunction) => {
         try {
@@ -28,7 +28,6 @@ class UserController {
     @Post()
     register = async (req: Request, res: Response, next: NextFunction) => {
         try {
-            //console.log('Req register', req.body);
             const user = await this.userService.register({...req.body});
             res.status(201).json(user);
         }

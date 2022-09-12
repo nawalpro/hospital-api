@@ -1,5 +1,5 @@
 import { Patient } from "../../modules/User/UserEntity";
-import { patient } from "../types/patient.types";
+import { patient } from "../types/user.types";
 
 export interface IBookService {
     getAll(): Promise<Patient[]>

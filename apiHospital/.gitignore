@@ -1,6 +1,5 @@
 .idea/
 .vscode/
-rest.http
 *.DS_Store
 node_modules/
 build/
