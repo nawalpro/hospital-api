@@ -1,6 +1,6 @@
 import {IDoctorRepository} from './PractitionerRepository';
-import  userRepo from '../User/UserRepository';
-import { IUserRepository } from '../User/UserRepository';
+import  userRepo from '../User/userRepository';
+import { IUserRepository } from '../User/userRepository';
 import { IMailerService } from '../../libs/mailer';
 import UserDTO from '../User/UserDto';
 

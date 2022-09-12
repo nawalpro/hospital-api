@@ -1,7 +1,7 @@
 import {getCustomRepository} from "typeorm";
-import UserRepository from './UserRepository';
-import UserService from './UserService';
-import UserController from './UserController';
+import UserRepository from './userRepository';
+import UserService from './userService';
+import UserController from './userController';
 import { jwtService, mailerService } from '../../libs';
 
 const userRepository = getCustomRepository(UserRepository);

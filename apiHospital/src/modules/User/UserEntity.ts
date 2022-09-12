@@ -27,7 +27,7 @@ export class User extends BaseEntity {
   @Column('boolean', {default: false})
   practitioner!: boolean;
   
-  @Column('boolean', {default: false})
+  @Column('boolean', {default: true})
   patient!: boolean;
 
   @CreateDateColumn()

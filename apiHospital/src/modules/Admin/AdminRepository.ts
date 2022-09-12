@@ -1,9 +1,9 @@
 import { EntityRepository, EntityManager } from "typeorm";
-import UserDTO from "../User/UserDto";
+import { User } from "../User/userEntity";
 
 
 export interface IAdminRepository {
-    findAll(): Promise<UserDTO[]>;
+    findAll(): Promise<User[]>;
 }
 
 @EntityRepository()
@@ -12,7 +12,7 @@ class AdminRepository implements IAdminRepository {
         constructor(private manager: EntityManager) {}
     
         async findAll() {
-            return await this.manager.find(UserDTO);
+            return await this.manager.find(User);
         }
     }
 export default AdminRepository;

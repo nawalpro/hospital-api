@@ -1,8 +1,8 @@
-import { User } from '../modules/User/UserEntity';
-import { userType } from '../modules/User/UserService';
+import { User } from '../modules/User/userEntity';
+import { user } from '../helpers/types/user.types';
 
 export interface IMailerService {
-    sendMail(user: userType) : Promise<void>
+    sendMail(user: user) : Promise<void>
 }
 
 class MailerService implements IMailerService {
@@ -11,7 +11,7 @@ class MailerService implements IMailerService {
         this.nodemailer = nodemailer;
     }
 
-    async sendMail(user: userType) {
+    async sendMail(user: user) {
 
         try {
             // Generate test SMTP service account from ethereal.email
