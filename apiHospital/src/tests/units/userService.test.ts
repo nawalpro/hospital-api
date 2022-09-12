@@ -1,4 +1,4 @@
-import UserService from "../../modules/User/userService";
+import UserService from "../../modules/User/UserService";
 import UserRepositoryMock from "../mocks/userRepository.mock";
 import { mailerService } from "../../libs";
 

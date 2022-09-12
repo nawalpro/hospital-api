@@ -1,5 +1,5 @@
 import { EntityRepository, EntityManager } from "typeorm";
-import { User } from "../User/userEntity";
+import { User } from "../User/UserEntity";
 
 
 export interface IAdminRepository {
