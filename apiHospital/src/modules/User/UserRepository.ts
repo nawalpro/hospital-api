@@ -1,21 +1,15 @@
 import { EntityRepository, EntityManager } from "typeorm";
 import bcrypt from "bcrypt";
-import { User } from "./UserEntity";
-
-export interface IUserRepository {
-  addNew(userEntity: any): Promise<User>;
-  checkIfUserExist(userEntity: any): Promise<User | undefined>;
-  findAll(): Promise<User[]>;
-  findByEmail(userEntity: any): Promise<User | undefined>;
-  compareHash(password: string, hash: string): Promise<boolean>;
-}
+import { User} from "./userEntity"
+import { IUserRepository } from "../../helpers/interfaces/user.interfaces";
+import { user } from "../../helpers/types/user.types"
 
 @EntityRepository()
 class UserRepository implements IUserRepository {
 
   constructor(private manager: EntityManager) {}
  
-  async addNew(userEntity: any) {
+  async addNew(userEntity: user) {
     const salt = bcrypt.genSaltSync(10);
     userEntity.password = bcrypt.hashSync(userEntity.password, salt);
     return await this.manager.save(User, userEntity);

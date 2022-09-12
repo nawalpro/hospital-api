@@ -1,4 +1,4 @@
-import { User } from '../modules/User/UserEntity';
+import { User } from '../modules/User/userEntity';
 import { userType } from '../modules/User/userService';
 
 export interface IMailerService {

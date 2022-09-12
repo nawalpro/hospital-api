@@ -1,12 +1,13 @@
 import { User } from "../../modules/User/UserEntity";
+import { user } from "../../helpers/types/user.types";
 import { IUserRepository } from "../../modules/User/userRepository";
 
-const user: User[] = [];
+const users: User[] = [];
 
 class UserRepositoryMock implements IUserRepository {
 
 	async findAll() {
-		return user;
+		return users;
 	}
 
 	async addNew(patientEntity: User) {
@@ -22,8 +23,7 @@ class UserRepositoryMock implements IUserRepository {
 	}
 
 	async findByEmail(email: string) {
-		const results = user.filter((patient) => patient);
-		return results[0];
+		return users[0];
 	}
 
 

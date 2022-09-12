@@ -1,14 +1,11 @@
 import UserDTO from "./UserDto";
 import { ApiError } from "../../helpers/ErrorHelpers";
 import { IMailerService } from "../../libs/mailer";
-import { IUserRepository } from "./userRepository";
-import { User } from "./UserEntity";
+import { IUserRepository, IUserService } from "../../helpers/interfaces/user.interfaces";
+import { user } from "../../helpers/types/user.types"
+import { User } from "./userEntity";
 
-export interface IUserService {
-  getAll(): Promise<UserDTO[]>;
-  register(userData: any): Promise<UserDTO>;
-  login(userData: any): Promise<UserDTO>;
-}
+
 
 export type userType = {
   firstname: string,
@@ -33,7 +30,7 @@ export default class UserService implements IUserService {
     return users.map((user: any) => new UserDTO(user));
   }
   
-  async register(userData:userType) {
+  async register(userData:user) {
     if (
       !userData.firstname ||
       !userData.lastname ||

@@ -1,6 +1,6 @@
 import {getCustomRepository} from "typeorm";
 import UserRepository from './userRepository';
-import UserService from './userService';
+import UserService from './UserService';
 import UserController from './UserController';
 import { jwtService, mailerService } from '../../libs';
 
