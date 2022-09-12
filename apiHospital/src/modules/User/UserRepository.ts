@@ -25,7 +25,6 @@ class UserRepository implements IUserRepository {
   }
   
   async findByEmail(userEntity: any) {
-    console.log(userEntity);
     return await this.manager.findOne(User, { email: userEntity.email });
   }
   compareHash = async (password: string, hash: string) => await bcrypt.compareSync(password, hash);
