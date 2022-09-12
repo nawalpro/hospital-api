@@ -1,5 +1,5 @@
 import {getConnectionManager} from "typeorm";
-import { User } from '../modules/User/UserEntity';
+import { User } from '../modules/User/userEntity';
 import config from "./env";
 
 const entities = [User];

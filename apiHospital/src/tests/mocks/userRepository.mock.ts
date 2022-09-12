@@ -1,6 +1,6 @@
-import { User } from "../../modules/User/UserEntity";
+import { User } from "../../modules/User/userEntity";
 import { user } from "../../helpers/types/user.types";
-import { IUserRepository } from "../../modules/User/userRepository";
+import { IUserRepository } from "../../helpers/interfaces/user.interfaces";
 
 const users: User[] = [];
 
@@ -33,8 +33,7 @@ class UserRepositoryMock implements IUserRepository {
 	}
 
 	async checkIfUserExist(userEntity: any){
-		const results = user.filter((patient) => patient);
-		return results[0];
+		return users[0];
 	}
 
 

@@ -1,7 +1,7 @@
 import { Response, Request, NextFunction } from "express";
 import { Controller, Middleware, Get, Post, Put, Delete } from '@overnightjs/core'
 import JwtService from "../../libs/jwt";
-import { IUserService } from './userService';
+import { IUserService } from '../../helpers/interfaces/user.interfaces';
 import { auth } from "../../middlewares";
 
 @Controller('users')

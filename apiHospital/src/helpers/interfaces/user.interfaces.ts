@@ -1,4 +1,4 @@
-import { User } from "../../modules/User/UserEntity";
+import { User } from "../../modules/User/userEntity";
 import UserDTO from '../../modules/User/UserDto'
 import { user } from "../types/user.types";
 
