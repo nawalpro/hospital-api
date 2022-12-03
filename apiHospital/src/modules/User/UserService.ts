@@ -11,19 +11,16 @@ export interface IUserService {
 }
 
 export type userType = {
-  firstname: string,
-  lastname: string,
-  phone: number,
-  email: string,
-  password: string
-}
+  firstname: string;
+  lastname: string;
+  phone: number;
+  email: string;
+  password: string;
+};
 export default class UserService implements IUserService {
   private userRepo;
   private mailerService;
-  constructor(
-    userRepository: IUserRepository,
-    mailerService: IMailerService
-  ) {
+  constructor(userRepository: IUserRepository, mailerService: IMailerService) {
     this.userRepo = userRepository;
     this.mailerService = mailerService;
   }
@@ -32,8 +29,8 @@ export default class UserService implements IUserService {
     const users = await this.userRepo.findAll();
     return users.map((user: any) => new UserDTO(user));
   }
-  
-  async register(userData:userType) {
+
+  async register(userData: userType) {
     if (
       !userData.firstname ||
       !userData.lastname ||
@@ -42,24 +39,28 @@ export default class UserService implements IUserService {
       !userData.password
     )
       throw new ApiError(400, "Missing required fields");
-    
+
     const user = await this.userRepo.checkIfUserExist(userData);
-    
+
     const regexEmail = /^([a-z A-Z 0-9](\.)?)+@\w+\.(\w){2,4}$/;
-    
-    const regexPassword = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@()$%^&*=_{}[\]:;\"'|\\<>,.\/~`±§+-]).{8,50}$/
 
-    if(!regexEmail.test(userData.email))
-     throw new ApiError(422, "Please enter a valid email address")
-     console.log("REGEX EMAIL", regexEmail.test(userData.email));
+    const regexPassword =
+      /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@()$%^&*=_{}[\]:;\"'|\\<>,.\/~`±§+-]).{8,50}$/;
 
-    if(!regexPassword.test(userData.password))
-      throw new ApiError(422, "Password must be between 8 and 50 characters, include at least one number, symbol, uppercase and lowercase letter")
-    
-    if(user)
+    if (!regexEmail.test(userData.email))
+      throw new ApiError(422, "Please enter a valid email address");
+    console.log("REGEX EMAIL", regexEmail.test(userData.email));
+
+    if (!regexPassword.test(userData.password))
+      throw new ApiError(
+        422,
+        "Password must be between 8 and 50 characters, include at least one number, symbol, uppercase and lowercase letter"
+      );
+
+    if (user)
       // console.log("USEEER",user);
-      throw new ApiError(409, "User already exist")
-    
+      throw new ApiError(409, "User already exist");
+
     const newUser = await this.userRepo.addNew(userData);
 
     await this.mailerService.sendMail(userData);
@@ -74,17 +75,13 @@ export default class UserService implements IUserService {
     console.log(user);
 
     if (!user)
-      throw new ApiError(
-        400,
-        "user with the specified email does not exists"
-      );
+      throw new ApiError(400, "user with the specified email does not exists");
 
     const passwordMatch = await this.userRepo.compareHash(
       userData.password,
       user.password
     );
-    if (!passwordMatch)
-      throw new ApiError(400, "user password do not match");
+    if (!passwordMatch) throw new ApiError(400, "user password do not match");
 
     return new UserDTO(user);
   }
